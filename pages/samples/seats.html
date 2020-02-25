@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
    
   
     <!-- endinject -->
@@ -23,18 +24,28 @@
     <!-- End layout styles -->
     <link rel="shortcut icon" href="../../assets/images/favicon.png" />
     <style>
+
+      
       .horizontal-parking{
+       /* background-image: url(s6.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;*/
+        background-color: #196F3D  ; 
+        overflow: auto;
+      
+     
+        border: 40px solid rgba(0,0,0, 0.4);
+        padding: 0px;
+        border-spacing: 15px;
+    
+      
+      }
+      
+     
+      .horizontal-parking .cars-container{
         background-image: url(s4.jpg);
         background-repeat: no-repeat;
         background-size: cover;
-        background-color: rgba(0,0,0, 0.4);
-        overflow: auto;
-        border-radius: 10px;
-        border: 10px solid grey;
-        padding: 0px;
-        border-spacing: 12px;
-      }
-      .horizontal-parking .cars-container{
         color: white;
         height: 75px;
         width: 40px;
@@ -42,19 +53,50 @@
         font-size: 10px;
         font-weight: bold;
         display: table-cell;
+       
       }
       .horizontal-parking .car-row{
         position: relative;
+       
+      }
+
+      .horizontal-row-number
+      {
+    
+        color: wheat;;
+    
+        width: 40px;
+         margin-top: 0;
+        font-size: 20px;
+        font-weight: bold;
+        display: table-cell;
       }
       .horizontal-parking .car-row .mid-row{
-          margin: 0 7px;
+        
           background-color: rgba(0,0,0, 0.4);
           color: wheat;
           font-size: 12px;
+        border-style: none;
+          padding: 12px;
+         
           border-top: 2px solid wheat;
-          border-bottom: 2px solid wheat;
-          padding: 7px;
+          border-bottom:2px solid wheat;
+      
+          
       }
+
+      .horizontal-parking .car-row .clearfix-grass{
+          margin: 0;
+          background-image: url(s6.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+          background-color: green;
+        
+          font-size: 12px;
+        
+          padding: 9px;
+      }
+    
       .horizontal-parking .cars-container span{
         width: 32px;
         display: inline-block;
@@ -65,10 +107,11 @@
         margin-right: 0;
       }
       .horizontal-parking .cars-container.booked, .vertical-parking .cars-container.booked{
-        filter: opacity(30%);
+        filter: opacity(50%);
       }
       .horizontal-parking .cars-container.available, .vertical-parking .cars-container.available{
-        filter: sepia(100%);
+        filter:sepia(50%);
+        cursor: pointer;
       }
       .horizontal-parking .cars-container .car{
         background-image: url(c1.jpg);
@@ -80,17 +123,15 @@
       }
       
       .vertical-parking{
-        background-image: url(s4.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-color: rgba(0,0,0, 0.4);
-        overflow: auto;
-        border-radius: 10px;
-        border: 10px solid grey;
+        background-color: #196F3D  ; 
+        overflow: scroll;
+      
+     
+        border: 40px solid rgba(0,0,0, 0.4);
         padding: 10px;
         display: inline-block;
-        width: 260px;
-        height: 900px;
+        width: 100%;
+        height: 600px;
       }
       .vertical-parking .cars-container{
         color: white;
@@ -152,6 +193,24 @@
         width: 50px;
       }
     </style>
+
+    <script>
+
+$(document).ready(function(){
+ $(".available").click(function()
+ {
+   $(this).css("background","orange");
+   var x = $(this).attr("span");
+  
+    alert(x);
+  
+  
+ })
+});
+
+
+
+    </script>
   </head>
   <body>
     <div class="container-scroller">
@@ -403,33 +462,23 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
+          <div class="parking-slot">
             <section class="horizontal-parking container">
               <div class="car-row pull-left">
-                <div class="cars-container booked">
+                <div class="horizontal-left">
+                <div class="clearfix-grass">
+                  
+                </div>
+                
+                <div class="horizontal-row-number">
+                  <div class="row-number"></div>
+                  <span>L1</span>
+                </div>
+                <div class="cars-container booked ">
                   <div class="car"></div>
                   <span>S1</span>
                 </div>
-                <div class="cars-container available">
-                  <div class="car"></div>
-                  <span>S1</span>
-                </div>
-                <div class="cars-container booked">
-                  <div class="car"></div>
-                  <span>S1</span>
-                </div>
-                <div class="cars-container available">
-                  <div class="car"></div>
-                  <span>S1</span>
-                </div>
-                <div class="cars-container booked">
-                  <div class="car"></div>
-                  <span>S1</span>
-                </div>
-                <div class="cars-container booked">
-                  <div class="car"></div>
-                  <span>S1</span>
-                </div>
-                <div class="cars-container booked">
+                <div class="cars-container available" >
                   <div class="car"></div>
                   <span>S1</span>
                 </div>
@@ -457,7 +506,7 @@
                   <div class="car"></div>
                   <span>S1</span>
                 </div>
-                <div class="cars-container booked">
+                <div class="cars-container available">
                   <div class="car"></div>
                   <span>S1</span>
                 </div>
@@ -505,12 +554,268 @@
                   <div class="car"></div>
                   <span>S1</span>
                 </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div></div>
                 <div class="mid-row clearfix">
                   <span class="fa fa-arrow-circle-right pull-left"> ENTRY</span> 
                   <span class="fa fa-arrow-circle-right pull-right"> EXIT </span> 
                 </div>
+                <div class="horizontal-right">
+                  <div class="horizontal-row-number">
+                    <div class="row-number"></div>
+                    <span>R1</span>
+                  </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container available" >
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container available">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container available"  >
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="clearfix-grass">
+                  
+                </div>
               </div>
+              </div>
+              
+
               <div class="car-row pull-left">
+                <div class="horizontal-left">
+                <div class="clearfix-grass">
+                  
+                </div>
+                <div class="horizontal-row-number">
+                  <div class="row-number"></div>
+                  <span>L2</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container available" >
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container available" >
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container available" >
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div></div>
+                <div class="mid-row clearfix">
+                  <span class="fa fa-arrow-circle-right pull-left"> ENTRY</span> 
+                  <span class="fa fa-arrow-circle-right pull-right"> EXIT </span> 
+                </div>
+                <div class="horizontal-right">
+                  <div class="horizontal-row-number">
+                    <div class="row-number"></div>
+                    <span>R2</span>
+                  </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container available" >
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
                 <div class="cars-container booked">
                   <div class="car"></div>
                   <span>S1</span>
@@ -523,6 +828,18 @@
                   <div class="car"></div>
                   <span>S1</span>
                 </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
+                <div class="cars-container booked">
+                  <div class="car"></div>
+                  <span>S1</span>
+                </div>
                 <div class="cars-container available">
                   <div class="car"></div>
                   <span>S1</span>
@@ -543,10 +860,6 @@
                   <div class="car"></div>
                   <span>S1</span>
                 </div>
-                <div class="cars-container available">
-                  <div class="car"></div>
-                  <span>S1</span>
-                </div>
                 <div class="cars-container booked">
                   <div class="car"></div>
                   <span>S1</span>
@@ -595,23 +908,14 @@
                   <div class="car"></div>
                   <span>S1</span>
                 </div>
-                <div class="cars-container booked">
-                  <div class="car"></div>
-                  <span>S1</span>
-                </div>
-                <div class="cars-container booked">
-                  <div class="car"></div>
-                  <span>S1</span>
-                </div>
-                <div class="cars-container booked">
-                  <div class="car"></div>
-                  <span>S1</span>
-                </div>
-                <div class="cars-container booked">
-                  <div class="car"></div>
-                  <span>S1</span>
+                <div class="clearfix-grass">
+                  
                 </div>
               </div>
+              </div>
+
+             
+
             </section>
 
 
@@ -826,7 +1130,7 @@
                 </div>
               </div>
             </section>
-
+          </div>
 
           <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
@@ -838,6 +1142,10 @@
           </footer>
           <!-- partial -->
         </div>
+
+
+        
+        <section class=
         <!-- main-panel ends -->
       </div>
       <!-- page-body-wrapper ends -->
