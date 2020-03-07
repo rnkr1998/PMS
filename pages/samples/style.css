@@ -62,10 +62,10 @@
  
        .horizontal-parking .car-row .clearfix-grass{
            margin: 0;
-           background-image: url(s6.jpg);
-         background-repeat: no-repeat;
-         background-size: cover;
-           background-color: green;       
+          background-image: url(s6.jpg);
+         background-repeat:no-repeat;
+         background-size:100%;
+           background-color: #0D800F;       
            font-size: 12px;    
            padding: 9px;
        }
@@ -228,6 +228,14 @@
       .inputdata
       {
         margin:10px;
-        padding:8px;
-        border:2px solid #196F3D;
+        padding:10px;
+        border:3px solid #196F3D;
+        border-radius: 2px;;
+      }
+
+      .hspace
+      {
+       
+       width:100px;
+       
       }

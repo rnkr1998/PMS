@@ -24,151 +24,11 @@
      <link rel="shortcut icon" href="../../assets/images/favicon.png" />
      <link rel="stylesheet" href="style.css">
     
-      <script>
-          function myfun()
-          {
-              var si;
-              var n=document.getElementById("hor").value;  
-              
-              var x=document.getElementById("sec");
-              var input = document.getElementById("inputgroup");
-              var data="";
-              var inputdata ="";
-            
-              
-               var i;
-               if(n>=1)
-               {
-                   for(i=1;i<=n;i++)
-                 {
-                     
-                     
-                         inputdata = inputdata +
-                         `<div class="inputcontent"> 
-                         
-                           <div class="inputdata" id=inputleftdata[`+i+`]>
-                            HORIZONTAL-LEFT-SIDE[ROW-`+i+`]:
-                             <div class="input-group mb-3 " id="inputleftgroup[`+i+`]">
-                        <input type="text" class="form-control" placeholder="No.of slots" id="inputleftslot[`+i+`]">
-                        <input type="text" class="form-control" placeholder="No.of space items" id="spaceitemleftgroup[`+i+`]" oninput="horizontalleftspaces(value,`+i+`)">
+     <script src="javascript.js"></script>
+     <script src="javascriptt.js"></script>
+      
    
-                        </div>
-                        </div>`+
-                      
-                        `
-                    
-                        <div class="inputdata" id=inputrightdata[`+i+`]>
-                          HORIZONTAL-RIGHT-SIDE[ROW-`+i+`]
-                        <div class="input-group mb-3 " id="inputrightgroup[`+i+`]">
-                         
-                            <input type="text" class="form-control" placeholder="No.of slots" id="inputrightslot[`+i+`]">
-                            <input type="text" class="form-control" placeholder="No.of space items" id="spaceitemrightgroup[`+i+`]"  oninput="horizontalrightspaces(value,`+i+`)">
-                          
-                        
-                        
-                        
-                      
-                          </div>
-                        </div>
-                     
-                        `
-                       
-                        
-                      
-                     
-                 
-                       
-                 }
-                 inputdata= inputdata+`
-                 <div><button class="btn btn-outline-secondary" type="button" onclick="my2fun()">SUBMIT</button></div>  </div>`;
-                 input.innerHTML +=inputdata;
-            
-             // document.getElementById("hort").innerHTML +=data;
-               }
-             
-         
-          }
-
-
-          function horizontalleftspaces(id,n)
-          {
-              
-              var i;
-              var space="";
-                 document.getElementById("inputleftslot["+n+"]").style.pointerEvents="none"; 
-                 document.getElementById("spaceitemleftgroup["+n+"]").style.pointerEvents="none"; 
-                 var si=document.getElementById("inputleftdata["+n+"]");
-
-
-                 
-
-
-                  for(i=1;i<=id;i++)
-                  {
-                      space=space+`
-                      HORIZONTAL-LEFT-SIDE[ROW-`+n+`]-SPACEITEM:`+i+`
-                      <div class="input-group input-group-sm mb-3 spacedata" id="inputleftgroupspacegroup[`+i+`]">
-          
-                       
-                     <input type="text" class="form-control" placeholder="No.of spaces" >
-                     <input type="text" class="form-control" placeholder="After which slot this space hold"  >
-                        </div>`
-                  }
-                 
-              
-                     
-                   
-                   
-                     
-                      
-                      si.innerHTML +=space;
-                        
-                   
-                    
-                  
-                 
-                 
-   
-          }
-
-
-          function horizontalrightspaces(id,n)
-          {
-              
-              var i;
-              var space="";
-                 document.getElementById("inputrightslot["+n+"]").style.pointerEvents="none"; 
-                 document.getElementById("spaceitemrightgroup["+n+"]").style.pointerEvents="none"; 
-                 var si=document.getElementById("inputrightdata["+n+"]");
-               
-                  for(i=1;i<=id;i++)
-                  {
-                      space=space+`
-                      HORIZONTAL-RIGHT-SIDE[ROW-`+n+`]-SPACEITEM:`+i+`
-                      <div class="input-group input-group-sm mb-3 spacedata" id="inputrightspacegroup[`+i+`]">
-          
-                       
-                     <input type="text" class="form-control" placeholder="No.of spaces" >
-                     <input type="text" class="form-control" placeholder="After which slot this space hold"  >
-                        </div>`
-                  }
-                  si.innerHTML +=space;
-          }
- 
-     </script>
- 
- <script>
- 
-   $(document).ready(function(){
-    $(".available").click(function()
-    {
-      $(this).css("background","orange");
-     
-     
-    })
-   });
-   
-       </script>
+    
    </head>
    <body>
      <div class="container-scroller">
@@ -420,18 +280,35 @@
          <!-- partial -->
          <div class="main-panel">
            <div class="content-wrapper">
- 
+             <h1 style="text-align: center;">ADMIN: CREATE PARKING SLOT SYSTEM</h1>
              <div id="inputgroup">
                  <div class="input-group input-group-lg" >
-                     <input type="text" class="form-control" placeholder="Enter no.of horizontal lanes you want" id="hor" >
-         
+                     <input type="text" class="form-control" placeholder="Enter no.of horizontal lanes you want" id="hor" oninput="inner()" required>
+                     
                    
-                       <button class="btn btn-outline-secondary" type="button" onclick="myfun()">SUBMIT</button>
-                     </div>
                     
+                     </div>
+                     
                    
                    </div>
-                   <div class="parking-slot" id="sec">
+                   <div id="contentdata">
+                        
+                  </div>
+                  
+                  
+                    <div class="content-wrapper">
+                   
+
+                        <div class="parking-slot" id="sec"
+                        
+                        ></div>
+                    
+                        </div>
+                        
+                         
+                         
+                           
+                            
                        <!--
                      <section class="horizontal-parking container" id="hort">
                      </section>
@@ -440,6 +317,7 @@
                    
          </div>
         </div>
+       </div>
  
             
  
