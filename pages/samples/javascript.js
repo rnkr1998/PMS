@@ -46,8 +46,8 @@ var leftid;
                         HORIZONTAL-LEFT-SIDE[ROW-`+i+`]:
                          <div class="input-group mb-3 " id="inputleftgroup[`+i+`]">
                         
-                    <input type="text" class="form-control" placeholder="No.of slots" id="inputHleftslots[`+i+`]" required>
-                    <input type="text" class="form-control" placeholder="No.of space items" id="inputHleftspaceitems[`+i+`]" oninput="horizontalleftspaces(value,`+i+`)" required>
+                    <input type="text" class="form-control" placeholder="No.of slots" id="inputHleftslots[`+i+`]" >
+                    <input type="text" class="form-control" placeholder="No.of space items" id="inputHleftspaceitems[`+i+`]" oninput="horizontalleftspaces(value,`+i+`)">
                      
                     </div>
                     <div class="input-group mb-3 " id="inputHleftspaceitemdata[`+i+`]">
@@ -81,8 +81,8 @@ var leftid;
                    
              }
              inputdata= inputdata+`
-             <div><button class="btn btn-dark" type="button" onclick="display()">SUBMIT</button></div>
-             <div><button class="btn btn-dark" type="button" onclick="display2()">ADD SPACES</button></div>   </div>`;
+             <div><button class="btn btn-dark" type="button" onclick="display()">SUBMIT</button></div>`
+             
              document.getElementById("contentdata").innerHTML =inputdata;
         
          // document.getElementById("hort").innerHTML + =data;
@@ -113,9 +113,9 @@ var leftid;
                   HORIZONTAL-LEFT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`
                   <div class="input-group input-group-sm mb-3 spacedata" id="inputleftgroupspacegroup[`+i+`]">
       
-                   
+                    <input type="text" class="form-control" placeholder="After which slot these spaces hold" id="inputHleftslotspaceitemindex[`+i+`]" required>
                  <input type="text" class="form-control" placeholder="No.of spaces" id="inputHleftslotspaces[`+i+`]" required>
-                 <input type="text" class="form-control" placeholder="After which slot these spaces hold" id="inputHleftslotspaceitemindex[`+i+`]">
+                
                     </div>`
               }
              
@@ -150,9 +150,9 @@ var leftid;
                   HORIZONTAL-RIGHT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`
                   <div class="input-group input-group-sm mb-3 spacedata" id="inputrightgroupspacegroup[`+i+`]">
       
-                   
+                  <input type="text" class="form-control" placeholder="After which slot these spaces hold" id="inputHrightslotspaceitemindex[`+i+`]" required>
                   <input type="text" class="form-control" placeholder="No.of spaces" id="inputHrightslotspaces[`+i+`]" required>
-                  <input type="text" class="form-control" placeholder="After which slot these spaces hold" id="inputHrightslotspaceitemindex[`+i+`]">
+                 
                      </div>`
               }
               document.getElementById("inputHrightspaceitemdata["+Hlanes+"]").innerHTML=space;
@@ -177,6 +177,7 @@ $(".available").click(function()
 
 function display()
 {
+  $(".content-wrapper2").hide();
   var i,j,k,l,m;
   var Hlanes=document.getElementById("hor").value;
   var dis=document.getElementById("sec");
@@ -189,8 +190,7 @@ for(i=1;i<=Hlanes;i++)
 
   var inputHleftskotss= document.getElementById("inputHleftslots["+i+"]").value;
   var inputHrightslotss= document.getElementById("inputHrightslots["+i+"]").value;
-  var leftids=document.getElementById("inputHleftspaceitems["+i+"]").value;
-  var rightids=document.getElementById("inputHrightspaceitems["+i+"]").value;
+ 
   res=res+` <div class="clearfix-grass">
                   
   </div>
@@ -252,13 +252,16 @@ dis.innerHTML=res;
 
 
 
-
+display2();
 
 }
 
 
 function display2()
 {
+
+  
+  $(".content-wrapper2").show(800);
   var i,j,k,l,m;
   
 
@@ -283,9 +286,7 @@ function display2()
               {
                 
                 spaces=spaces+`
-                <span class="hspace"><img src="g.jpg" alt="img" height="70px" width="50px"</img>
-                    
-                     </span>
+                <div class="space-container" style="padding:20px;"> <span class="hspace" ></span></div>
 
 
                 `
@@ -312,9 +313,7 @@ function display2()
                        {
                        
                          spices=spices+`
-                         <span class="hspace"><img src="g.jpg" alt="img" height="70px" width="50px"</img>
-                    
-                         </span>
+                         <div class="space-container" style="padding:20px;"> <span class="hspace" ></span></div>
                          `
                        
                               }

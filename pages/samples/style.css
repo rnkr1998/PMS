@@ -1,5 +1,7 @@
 
       
+
+
       .horizontal-parking{
         /* background-image: url(s6.jpg);
          background-repeat: no-repeat;
@@ -21,6 +23,18 @@
          background-image: url(s4.jpg);
          background-repeat: no-repeat;
          background-size: cover;
+         color: white;
+         height: 75px;
+         width: 40px;
+         text-align: center;
+         font-size: 10px;
+         font-weight: bold;
+         display: table-cell;
+        
+       }
+       .horizontal-parking .space-container
+       {
+        background-color: #196F3D  ;
          color: white;
          height: 75px;
          width: 40px;
