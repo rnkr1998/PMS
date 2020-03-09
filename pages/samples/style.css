@@ -42,6 +42,7 @@
          font-size: 10px;
          font-weight: bold;
          display: table-cell;
+         padding:20px;
         
        }
        .horizontal-parking .car-row{
@@ -235,8 +236,8 @@
        }
       .spacedata
       {
-        margin-left:100px;
-       width:70%;
+        margin-left:50px;
+       width:85%;
       }
 
       .inputdata

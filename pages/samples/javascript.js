@@ -1,5 +1,5 @@
 
-var leftid;
+
 
 
     $(document).ready(function(){
@@ -16,6 +16,7 @@ var leftid;
     
     function myfun(s)
       {
+        
         alert(" Your selected seat is : " +s);
       }
     
@@ -45,11 +46,13 @@ var leftid;
                     
                         HORIZONTAL-LEFT-SIDE[ROW-`+i+`]:
                          <div class="input-group mb-3 " id="inputleftgroup[`+i+`]">
-                        
-                    <input type="text" class="form-control" name="field" placeholder="No.of slots" id="inputHleftslots[`+i+`]" required>
+                      
+                     <input type="number" class="form-control" name="field" placeholder="No.of slots [max value:1000]" id="inputHleftslots[`+i+`]" min="0" max="1000" oninput="Lchangeofslot(`+i+`)" required >
+                   
+                  
+                    <input type="number" class="form-control" name="field" placeholder="No.of space items [max value:100]" id="inputHleftspaceitems[`+i+`]" min="0" max="100" oninput="horizontalleftspaces(value,`+i+`)" required>
                     
-                    <input type="text" class="form-control" name="field" placeholder="No.of space items" id="inputHleftspaceitems[`+i+`]" oninput="horizontalleftspaces(value,`+i+`)" required>
-                     
+                
                     </div>
                     <div class="input-group mb-3 " id="inputHleftspaceitemdata[`+i+`]">
                    
@@ -64,9 +67,10 @@ var leftid;
                       HORIZONTAL-RIGHT-SIDE[ROW-`+i+`]
                     <div class="input-group mb-3 " id="inputrightgroup[`+i+`]">
                      
-                        <input type="text" class="form-control" name="field" placeholder="No.of slots" id="inputHrightslots[`+i+`]" required>
-                        <input type="text" class="form-control" name="field" placeholder="No.of space items" id="inputHrightspaceitems[`+i+`]"  oninput="horizontalrightspaces(value,`+i+`)" required>
-                
+                        <input type="number" class="form-control" name="field" placeholder="No.of slots [max value:1000]" id="inputHrightslots[`+i+`]" min="0" max="1000" oninput="Rchangeofslot(`+i+`)" required >
+                       
+                        <input type="number" class="form-control" name="field" placeholder="No.of space items [max value:100]" id="inputHrightspaceitems[`+i+`]"  min="0" max="100" oninput="horizontalrightspaces(value,`+i+`)" required>
+                      
                       </div>
                       <div class="input-group mb-3 " id="inputHrightspaceitemdata[`+i+`]">
                    
@@ -98,30 +102,48 @@ var leftid;
          
      
       }
+function Lchangeofslot(a)
+{
+  document.getElementById("inputHleftspaceitems["+a+"]").value="none";
+
+  document.getElementById("inputHleftspaceitemdata["+a+"]").innerHTML ="";
 
 
+}
+function Rchangeofslot(a)
+{
+
+  document.getElementById("inputHrightspaceitems["+a+"]").value="none";
+
+  document.getElementById("inputHrightspaceitemdata["+a+"]").innerHTML ="";
+
+}
       function horizontalleftspaces(id, Hlanes)
       {
           
           var i;
           var space="";
-          leftid=id;
-             
+          var leftid=id;
+          var HLmaxvalues=document.getElementById("inputHleftslots["+Hlanes+"]").value;
 
              
-
-
+         if(HLmaxvalues>0)
+         {
               for(i=1;i<=id;i++)
               {
+                
+              
                   space=space+`
                   HORIZONTAL-LEFT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`
                   <div class="input-group input-group-sm mb-3 spacedata" id="inputleftgroupspacegroup[`+i+`]">
       
-                    <input type="text" class="form-control" name="field" placeholder="After which slot these spaces hold" id="inputHleftslotspaceitemindex[`+i+`]" required>
-                 <input type="text" class="form-control" name="field" placeholder="No.of spaces" id="inputHleftslotspaces[`+i+`]" required>
+                    <input type="number" class="form-control" name="field" placeholder="After which slot these spaces hold [max value:`+HLmaxvalues+`]" id="inputHleftslotspaceitemindex[`+i+`]" min="1" max="`+HLmaxvalues+`" required>
                 
+                    <input type="number" class="form-control" name="field" placeholder="No.of spaces [max value:20]" id="inputHleftslotspaces[`+i+`]" min="0" max="20" required>
+                 
                     </div>`
               }
+              
              
           
                  
@@ -132,6 +154,10 @@ var leftid;
            
                     
               document.getElementById("inputHleftspaceitemdata["+Hlanes+"]").innerHTML =space;
+            }
+            else{
+              document.getElementById("inputHleftspaceitemdata["+Hlanes+"]").innerHTML ="";
+            }
           
               
              
@@ -146,21 +172,29 @@ var leftid;
           var i;
           var space="";
       
-        
-           
+          var HRmaxvalues=document.getElementById("inputHrightslots["+Hlanes+"]").value;
+          if(HRmaxvalues>0)
+          {
+            
               for(i=1;i<=id;i++)
               {
                   space=space+`
                   HORIZONTAL-RIGHT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`
                   <div class="input-group input-group-sm mb-3 spacedata" id="inputrightgroupspacegroup[`+i+`]">
       
-                  <input type="text" class="form-control" name="field" placeholder="After which slot these spaces hold" id="inputHrightslotspaceitemindex[`+i+`]" required>
-                  <input type="text" class="form-control" name="field" placeholder="No.of spaces" id="inputHrightslotspaces[`+i+`]" required>
+                  <input type="number" class="form-control" name="field" placeholder="After which slot these spaces hold [max value:`+HRmaxvalues+`]" id="inputHrightslotspaceitemindex[`+i+`]" min="1" max="`+HRmaxvalues+`" required>
                  
+                  <input type="number" class="form-control" name="field" placeholder="No.of spaces [max value:20]" id="inputHrightslotspaces[`+i+`]" min="0" max="20" required>
+                
                      </div>`
               }
               document.getElementById("inputHrightspaceitemdata["+Hlanes+"]").innerHTML=space;
+            }
+            else{
+              document.getElementById("inputHrightspaceitemdata["+Hlanes+"]").innerHTML="";
+            }
       }
+     
 
 
      
@@ -177,7 +211,7 @@ $(".available").click(function()
 });
 
 
-
+//render slots and space items
 
 function display()
 {
@@ -208,7 +242,7 @@ for(i=1;i<=Hlanes;i++)
          
         
               
-                <div class="cars-container available "  id="Hleftseat-`+i+`.`+j+`">
+                <div class="cars-container available "  id="HLN`+i+`S`+j+`"  onclick="myfun(id)">
                   <div class="car"></div>
                   <span>S`+j+`</span>
                 </div>
@@ -230,7 +264,7 @@ for(i=1;i<=Hlanes;i++)
          
         
      
-                <div class="cars-container available " id="Hrightseat-`+i+`.`+k+`">
+                <div class="cars-container available " id="HRN`+i+`S`+k+`" onclick="myfun(id)">
                   <div class="car"></div>
                   <span>S`+k+`</span>
                 </div>
@@ -261,6 +295,7 @@ display2();
 }
 
 
+//render spaces
 function display2()
 {
 
@@ -280,17 +315,17 @@ function display2()
  {
           var num=document.getElementById("inputHleftslotspaces["+l+"]").value;
           var after=document.getElementById("inputHleftslotspaceitemindex["+l+"]").value;
-          console.log(after);
-          console.log(num);
+         
 
           var spaces="";
 
-          var element=document.getElementById("Hleftseat-"+i+"."+after);
+          var element=document.getElementById("HLN"+i+"S"+after);
+
               for(j=1;j<=num;j++)
               {
                 
                 spaces=spaces+`
-                <div class="space-container" style="padding:20px;"> <span class="hspace" ></span></div>
+                <div class="space-container" > <span class="hspace" ></span></div>
 
 
                 `
@@ -300,7 +335,7 @@ function display2()
          
          
 
-          console.log(element);
+          
          
           $(element).after(spaces);
 
@@ -312,12 +347,12 @@ function display2()
                    console.log(after);
                    console.log(num);
                    var spices="";
-                   var elementer=document.getElementById("Hrightseat-"+i+"."+after);
+                   var elementer=document.getElementById("HRN"+i+"S"+after);
                        for(j=1;j<=num;j++)
                        {
                        
                          spices=spices+`
-                         <div class="space-container" style="padding:20px;"> <span class="hspace" ></span></div>
+                         <div class="space-container" > <span class="hspace" ></span></div>
                          `
                        
                               }
@@ -338,6 +373,7 @@ function display2()
 }
 
 
+//form validation
 (function() {
   'use strict';
   window.addEventListener('load', function() {
@@ -350,6 +386,7 @@ function display2()
           event.preventDefault();
           event.stopPropagation();
           form.classList.add('was-validated');
+        
         }
         if (form.checkValidity() === true) {
           event.preventDefault();
