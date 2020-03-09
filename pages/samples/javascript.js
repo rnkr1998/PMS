@@ -46,8 +46,9 @@ var leftid;
                         HORIZONTAL-LEFT-SIDE[ROW-`+i+`]:
                          <div class="input-group mb-3 " id="inputleftgroup[`+i+`]">
                         
-                    <input type="text" class="form-control" placeholder="No.of slots" id="inputHleftslots[`+i+`]" >
-                    <input type="text" class="form-control" placeholder="No.of space items" id="inputHleftspaceitems[`+i+`]" oninput="horizontalleftspaces(value,`+i+`)">
+                    <input type="text" class="form-control" name="field" placeholder="No.of slots" id="inputHleftslots[`+i+`]" required>
+                    
+                    <input type="text" class="form-control" name="field" placeholder="No.of space items" id="inputHleftspaceitems[`+i+`]" oninput="horizontalleftspaces(value,`+i+`)" required>
                      
                     </div>
                     <div class="input-group mb-3 " id="inputHleftspaceitemdata[`+i+`]">
@@ -63,8 +64,8 @@ var leftid;
                       HORIZONTAL-RIGHT-SIDE[ROW-`+i+`]
                     <div class="input-group mb-3 " id="inputrightgroup[`+i+`]">
                      
-                        <input type="text" class="form-control" placeholder="No.of slots" id="inputHrightslots[`+i+`]">
-                        <input type="text" class="form-control" placeholder="No.of space items" id="inputHrightspaceitems[`+i+`]"  oninput="horizontalrightspaces(value,`+i+`)">
+                        <input type="text" class="form-control" name="field" placeholder="No.of slots" id="inputHrightslots[`+i+`]" required>
+                        <input type="text" class="form-control" name="field" placeholder="No.of space items" id="inputHrightspaceitems[`+i+`]"  oninput="horizontalrightspaces(value,`+i+`)" required>
                 
                       </div>
                       <div class="input-group mb-3 " id="inputHrightspaceitemdata[`+i+`]">
@@ -81,16 +82,19 @@ var leftid;
                    
              }
              inputdata= inputdata+`
-             <div><button class="btn btn-dark" type="button" onclick="display()">SUBMIT</button></div>`
+             <div><button class="btn btn-dark" type="submit">SUBMIT</button></div>`
              
              document.getElementById("contentdata").innerHTML =inputdata;
         
-         // document.getElementById("hort").innerHTML + =data;
+
            }
            else
            {
             document.getElementById("contentdata").innerHTML ="";
            }
+          
+          
+          
          
      
       }
@@ -113,8 +117,8 @@ var leftid;
                   HORIZONTAL-LEFT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`
                   <div class="input-group input-group-sm mb-3 spacedata" id="inputleftgroupspacegroup[`+i+`]">
       
-                    <input type="text" class="form-control" placeholder="After which slot these spaces hold" id="inputHleftslotspaceitemindex[`+i+`]" required>
-                 <input type="text" class="form-control" placeholder="No.of spaces" id="inputHleftslotspaces[`+i+`]" required>
+                    <input type="text" class="form-control" name="field" placeholder="After which slot these spaces hold" id="inputHleftslotspaceitemindex[`+i+`]" required>
+                 <input type="text" class="form-control" name="field" placeholder="No.of spaces" id="inputHleftslotspaces[`+i+`]" required>
                 
                     </div>`
               }
@@ -125,7 +129,7 @@ var leftid;
                
                  
                   
-              //document.getElementById("inputleftdata["+Hlanes+"]").innerHTML +=space;
+           
                     
               document.getElementById("inputHleftspaceitemdata["+Hlanes+"]").innerHTML =space;
           
@@ -150,8 +154,8 @@ var leftid;
                   HORIZONTAL-RIGHT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`
                   <div class="input-group input-group-sm mb-3 spacedata" id="inputrightgroupspacegroup[`+i+`]">
       
-                  <input type="text" class="form-control" placeholder="After which slot these spaces hold" id="inputHrightslotspaceitemindex[`+i+`]" required>
-                  <input type="text" class="form-control" placeholder="No.of spaces" id="inputHrightslotspaces[`+i+`]" required>
+                  <input type="text" class="form-control" name="field" placeholder="After which slot these spaces hold" id="inputHrightslotspaceitemindex[`+i+`]" required>
+                  <input type="text" class="form-control" name="field" placeholder="No.of spaces" id="inputHrightslotspaces[`+i+`]" required>
                  
                      </div>`
               }
@@ -325,8 +329,39 @@ function display2()
                    
                    $(elementer).after(spices);
 }
+
           
 }
+
+
+
 }
+
+
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('contentclass');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+          form.classList.add('was-validated');
+        }
+        if (form.checkValidity() === true) {
+          event.preventDefault();
+          event.stopPropagation();
+          form.classList.add('was-validated');
+          display();
+        }
+       
+        
+      }, false);
+    });
+  }, false);
+})();
 
 
