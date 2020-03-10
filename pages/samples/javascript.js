@@ -441,7 +441,7 @@ function display2()
           event.preventDefault();
           event.stopPropagation();
           form.classList.add('was-validated');
-        
+          window.location.href="innerforloop.html";
         }
        
         
