@@ -227,25 +227,42 @@
        }
 
 
-
-       .mb-3
+        .btn-block
        {
-      
-   
-
+        background:#227545;
+        color:white;
        }
-      .spacedata
-      {
-        margin-left:50px;
-       width:85%;
-      }
 
+
+.horizontal-border
+{
+  border:5px solid #259c56;
+  border-radius: 7px;
+  margin:10px;
+  padding:10px;
+}
+
+.vertical-border
+{
+  border:5px solid #259c56;
+  border-radius: 7px;
+  margin:10px;
+  padding:10px;
+}
+      
+.open-lane-div
+{
+  margin:10px;
+  padding:10px;
+  border:7px solid #1d8046;
+  border-radius: 7px;
+}
       .inputdata
       {
         margin:10px;
         padding:10px;
-        border:3px solid #196F3D;
-        border-radius: 2px;;
+        border:3px solid #38d679;
+        border-radius: 7px;
       }
 
       .hspace

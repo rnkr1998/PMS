@@ -285,41 +285,79 @@
          <div class="main-panel">
            <div class="content-wrapper">
            
-             <h1 style="text-align: center;">ADMIN: CREATE PARKING SLOT SYSTEM</h1>
-             <div id="inputgroup">
-                 <div class="input-group input-group-lg" >
-                     <input type="text" class="form-control" placeholder="Enter no.of horizontal lanes you want" id="hor" oninput="inner()" required>
-                     
-                   
-                    
-                     </div>
-                     
-                   
+            <div class="open-lane-div">
+            <form  class="contentclass" novalidate>      
+             <h1 style="text-align: center;">ADMIN: OPEN PARKING SLOT SYSTEM</h1>
+
+
+
+
+
+
+
+
+        <div class="horizontal-border">
+
+                     <h3 style="text-align: center;">HORIZONTAL OPEN PARKING SLOT</h3>
+             <div class="inputgroup">
+                        <div class="input-group col-md-12 input-group-lg" >
+                               <input type="number" class="form-control" placeholder="Enter no.of horizontal lanes you want" id="hor" min="0" oninput="Hinner()" required>
+                        </div>
+             </div>
+                  <div id="Hcontentdata" class="contentclass" novalidate>
+                        
+                  </div>
+           
+          </div> 
+          
+          
+
+          <div class="vertical-border">
+
+            <h3 style="text-align: center;">VERTICAL OPEN PARKING SLOT</h3>
+                 <div class="inputgroup">
+               <div class="input-group col-md-12 input-group-lg" >
+                      <input type="number" class="form-control" placeholder="Enter no.of vertical lanes you want" id="ver" min="0" required>
+               </div>
                    </div>
-                   <form id="contentdata" class="contentclass" novalidate>
-                        
-                   </form>
-                  
-                  
-                    <div class="content-wrapper2">
-                   
-                        
-                        <div class="parking-slot" id="sec">
-                        
-                        </div>
-                      
-                        </div>
-                         
-                         
-                           
-                            
+                     <div id="Vcontentdata" class="contentclass" novalidate>
+               
+                       </div>
+  
+              </div>
+
+
+
+
+                    
+                  <div><button class="btn  btn-lg btn-block " type="submit" >SUBMIT</button></div> 
+            </form>
+         </div>
+
+
+         <div class="content-wrapper2">
+  
+                    <div class="Hparking-slot" id="Hsec">
+          
+                     </div>
+        
+        </div>  
+
+        <div class="content-wrapper3">
+
+                      <div class="Vparking-slot" id="Vsec">
+          
+                      </div>
+        
+         </div> 
+          
+
+         
                        <!--
                      <section class="horizontal-parking container" id="hort">
                      </section>
                     -->
-                    
-                   
-         </div>
+        </div>
         </div>
        </div>
  

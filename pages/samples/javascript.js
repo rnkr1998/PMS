@@ -21,10 +21,22 @@
       }
     
     
-      function inner()
+
+
+
+
+
+
+
+
+
+
+
+      function Hinner()
       {
         
           var Hlanes=document.getElementById("hor").value;  
+          
           
           
         
@@ -43,9 +55,9 @@
                      `<div class="inputcontent"> 
                      
                        <div class="inputdata" >
-                    
-                        HORIZONTAL-LEFT-SIDE[ROW-`+i+`]:
-                         <div class="input-group mb-3 " id="inputleftgroup[`+i+`]">
+                       <h4>HORIZONTAL-LEFT-SIDE[ROW-`+i+`]:</h4>
+                        
+                         <div class="input-group col-md-12 mb-3 " id="inputleftgroup[`+i+`]">
                       
                      <input type="number" class="form-control" name="field" placeholder="No.of slots [max value:1000]" id="inputHleftslots[`+i+`]" min="0" max="1000" oninput="Lchangeofslot(`+i+`)" required >
                    
@@ -54,7 +66,7 @@
                     
                 
                     </div>
-                    <div class="input-group mb-3 " id="inputHleftspaceitemdata[`+i+`]">
+                    <div class="input-group mb-3 justify-content-md-center" id="inputHleftspaceitemdata[`+i+`]">
                    
                     </div>
                   
@@ -64,15 +76,16 @@
                     `
                 
                     <div class="inputdata" id=inputrightdata[`+i+`]>
-                      HORIZONTAL-RIGHT-SIDE[ROW-`+i+`]
-                    <div class="input-group mb-3 " id="inputrightgroup[`+i+`]">
+                    <h4>HORIZONTAL-RIGHT-SIDE[ROW-`+i+`]</h4>
+                    
+                    <div class="input-group col-md-12 mb-3 " id="inputrightgroup[`+i+`]">
                      
                         <input type="number" class="form-control" name="field" placeholder="No.of slots [max value:1000]" id="inputHrightslots[`+i+`]" min="0" max="1000" oninput="Rchangeofslot(`+i+`)" required >
                        
                         <input type="number" class="form-control" name="field" placeholder="No.of space items [max value:100]" id="inputHrightspaceitems[`+i+`]"  min="0" max="100" oninput="horizontalrightspaces(value,`+i+`)" required>
                       
                       </div>
-                      <div class="input-group mb-3 " id="inputHrightspaceitemdata[`+i+`]">
+                      <div class="input-group mb-3 justify-content-md-center" id="inputHrightspaceitemdata[`+i+`]">
                    
                       </div>
                     </div>`
@@ -85,16 +98,15 @@
              
                    
              }
-             inputdata= inputdata+`
-             <div><button class="btn btn-dark" type="submit">SUBMIT</button></div>`
+            
              
-             document.getElementById("contentdata").innerHTML =inputdata;
+             document.getElementById("Hcontentdata").innerHTML =inputdata;
         
 
            }
            else
            {
-            document.getElementById("contentdata").innerHTML ="";
+            document.getElementById("Hcontentdata").innerHTML ="";
            }
           
           
@@ -104,7 +116,7 @@
       }
 function Lchangeofslot(a)
 {
-  document.getElementById("inputHleftspaceitems["+a+"]").value="none";
+  document.getElementById("inputHleftspaceitems["+a+"]").value="";
 
   document.getElementById("inputHleftspaceitemdata["+a+"]").innerHTML ="";
 
@@ -113,7 +125,7 @@ function Lchangeofslot(a)
 function Rchangeofslot(a)
 {
 
-  document.getElementById("inputHrightspaceitems["+a+"]").value="none";
+  document.getElementById("inputHrightspaceitems["+a+"]").value="";
 
   document.getElementById("inputHrightspaceitemdata["+a+"]").innerHTML ="";
 
@@ -134,10 +146,11 @@ function Rchangeofslot(a)
                 
               
                   space=space+`
-                  HORIZONTAL-LEFT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`
-                  <div class="input-group input-group-sm mb-3 spacedata" id="inputleftgroupspacegroup[`+i+`]">
+                  <h6>HORIZONTAL-LEFT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`</h6>
+                  
+                  <div class="input-group input-group col-md-10 mb-3" id="inputleftgroupspacegroup[`+i+`]">
       
-                    <input type="number" class="form-control" name="field" placeholder="After which slot these spaces hold [max value:`+HLmaxvalues+`]" id="inputHleftslotspaceitemindex[`+i+`]" min="1" max="`+HLmaxvalues+`" required>
+                    <input type="number" class="form-control" name="field" placeholder="slot number to hold [max value:`+HLmaxvalues+`]" id="inputHleftslotspaceitemindex[`+i+`]" min="1" max="`+HLmaxvalues+`" required>
                 
                     <input type="number" class="form-control" name="field" placeholder="No.of spaces [max value:20]" id="inputHleftslotspaces[`+i+`]" min="0" max="20" required>
                  
@@ -179,10 +192,11 @@ function Rchangeofslot(a)
               for(i=1;i<=id;i++)
               {
                   space=space+`
-                  HORIZONTAL-RIGHT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`
-                  <div class="input-group input-group-sm mb-3 spacedata" id="inputrightgroupspacegroup[`+i+`]">
+                  <h6>HORIZONTAL-RIGHT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`</h6>
+                  
+                  <div class="input-group input-group col-md-10 mb-3 spacedata" id="inputrightgroupspacegroup[`+i+`]">
       
-                  <input type="number" class="form-control" name="field" placeholder="After which slot these spaces hold [max value:`+HRmaxvalues+`]" id="inputHrightslotspaceitemindex[`+i+`]" min="1" max="`+HRmaxvalues+`" required>
+                  <input type="number" class="form-control" name="field" placeholder="slot number to hold [max value:`+HRmaxvalues+`]" id="inputHrightslotspaceitemindex[`+i+`]" min="1" max="`+HRmaxvalues+`" required>
                  
                   <input type="number" class="form-control" name="field" placeholder="No.of spaces [max value:20]" id="inputHrightslotspaces[`+i+`]" min="0" max="20" required>
                 
@@ -211,16 +225,18 @@ $(".available").click(function()
 });
 
 
-//render slots and space items
+//render slots and slot items
 
 function display()
 {
+
   $(".content-wrapper2").hide();
   var i,j,k,l,m;
   var Hlanes=document.getElementById("hor").value;
-  var dis=document.getElementById("sec");
+  var dis=document.getElementById("Hsec");
   var res=` <section class="horizontal-parking container">`;
   
+ 
 for(i=1;i<=Hlanes;i++)
 {
   res=res+`<div class="car-row pull-left">`
@@ -287,7 +303,7 @@ res=res+` <div class="clearfix-grass">
 }
 res=res+`</section>`
 dis.innerHTML=res;
-
+  
 
 
 display2();
@@ -402,3 +418,29 @@ function display2()
 })();
 
 
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('slot-create');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+          form.classList.add('was-validated');
+        
+        }
+        if (form.checkValidity() === true) {
+          event.preventDefault();
+          event.stopPropagation();
+          form.classList.add('was-validated');
+          display();
+        }
+       
+        
+      }, false);
+    });
+  }, false);
+})();
