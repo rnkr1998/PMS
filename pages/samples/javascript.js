@@ -405,10 +405,15 @@ function display2()
         
         }
         if (form.checkValidity() === true) {
-          event.preventDefault();
-          event.stopPropagation();
-          form.classList.add('was-validated');
-          display();
+
+         
+            event.preventDefault();
+            event.stopPropagation();
+            form.classList.add('was-validated');
+            display();
+          
+
+         
         }
        
         
@@ -436,7 +441,7 @@ function display2()
           event.preventDefault();
           event.stopPropagation();
           form.classList.add('was-validated');
-          display();
+        
         }
        
         
