@@ -236,8 +236,8 @@
 
 .body-content
 {
-  border:5px solid #259c56;
-  border-radius: 7px;
+  border:2px solid #259c56;
+ 
   margin:10px;
   padding:8px;
 }
@@ -247,15 +247,15 @@
 {
   margin:10px;
   padding:11px;
-  border:7px solid #1d8046;
-  border-radius: 8px;
+  border:3px solid #1d8046;
+ 
 }
       .inputdata
       {
         margin:10px;
         padding:11px;
-        border:3px solid #38d679;
-        border-radius: 8px;
+        border:1px solid #38d679;
+      
       }
 
       .hspace
@@ -292,21 +292,21 @@
           padding:7px;
           font-size: 5px;
           margin:2px;
-          border:3px solid #259c56;
+          border:1px solid #259c56;
         }
         .open-lane-div
         {
           margin:2px;
           padding:7px;
-          border:5px solid #1d8046;
-          border-radius: 7px;
+          border:2px solid #1d8046;
+          
         }
         .inputdata
         {
           margin:5px;
           padding:7px;
-          border:2px solid #38d679;
-          border-radius: 7px;
+          border:3px solid #38d679;
+         
          
         }
         h6
