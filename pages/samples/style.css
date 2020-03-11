@@ -265,7 +265,12 @@
        
       }
 
-
+      .form-control
+      {
+        padding:10px;
+        font-size: 17px;
+        height:2.8rem;
+      }
 
 
 
@@ -279,7 +284,7 @@
         .content-wrapper
         {
           margin:2x;
-          padding:7px;
+          padding:13px;
           
         }
         .body-content
@@ -327,9 +332,9 @@
 
         .form-control
         {
-          padding:8px;
-          font-size: 10px;
-          height:2rem;
+          padding:10px;
+          font-size: 17px;
+          height:2.5rem;
         }
 
         
