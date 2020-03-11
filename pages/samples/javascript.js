@@ -335,7 +335,7 @@ function display2()
 
           var spaces="";
 
-          var element=document.getElementById("HLN"+i+"S"+after);
+          var element=document.getElementById((String.fromCharCode(64+i))+"1S"+after);
 
               for(j=1;j<=num;j++)
               {
@@ -363,7 +363,7 @@ function display2()
                    console.log(after);
                    console.log(num);
                    var spices="";
-                   var elementer=document.getElementById("HRN"+i+"S"+after);
+                   var elementer=document.getElementById((String.fromCharCode(64+i))+"2S"+after);
                        for(j=1;j<=num;j++)
                        {
                        
