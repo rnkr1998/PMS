@@ -45,7 +45,7 @@
         
           
            var i;
-           if(Hlanes>=1)
+           if(Hlanes>=1 && Hlanes<=26)
            {
                for(i=1;i<=Hlanes;i++)
              {
@@ -250,7 +250,7 @@ for(i=1;i<=Hlanes;i++)
   </div>
   <div class="horizontal-row-number">
   <div class="row-number"></div>
-  <span>L`+i+`</span>
+  <span>`+(String.fromCharCode(64+i))+`1</span>
 </div>`
     for(j=1;j<=inputHleftskotss;j++)
     {
@@ -258,7 +258,7 @@ for(i=1;i<=Hlanes;i++)
          
         
               
-                <div class="cars-container available "  id="HLN`+i+`S`+j+`"  onclick="myfun(id)">
+                <div class="cars-container available "  id="`+(String.fromCharCode(64+i))+`1S`+j+`"  onclick="myfun(id)">
                   <div class="car"></div>
                   <span>S`+j+`</span>
                 </div>
@@ -270,7 +270,7 @@ for(i=1;i<=Hlanes;i++)
   </div>
   <div class="horizontal-row-number">
   <div class="row-number"></div>
-  <span>R`+i+`</span>
+  <span>`+(String.fromCharCode(64+i))+`2</span>
 </div>`
 
 
@@ -280,7 +280,7 @@ for(i=1;i<=Hlanes;i++)
          
         
      
-                <div class="cars-container available " id="HRN`+i+`S`+k+`" onclick="myfun(id)">
+                <div class="cars-container available " id="`+(String.fromCharCode(64+i))+`2S`+k+`"  onclick="myfun(id)">
                   <div class="car"></div>
                   <span>S`+k+`</span>
                 </div>
