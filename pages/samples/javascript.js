@@ -148,7 +148,7 @@ function Rchangeofslot(a)
                   space=space+`
                   <h6>HORIZONTAL-LEFT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`</h6>
                   
-                  <div class="input-group  col-md-9 mb-3" id="inputleftgroupspacegroup[`+i+`]">
+                  <div class="input-group  col-md-10 mb-3" id="inputleftgroupspacegroup[`+i+`]">
       
                     <input type="number" class="form-control" name="field" placeholder="slot number to hold [max value:`+HLmaxvalues+`]" id="inputHleftslotspaceitemindex[`+i+`]" min="1" max="`+HLmaxvalues+`" required>
                 
@@ -194,7 +194,7 @@ function Rchangeofslot(a)
                   space=space+`
                   <h6>HORIZONTAL-RIGHT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`</h6>
                   
-                  <div class="input-group col-md-9 mb-3 spacedata" id="inputrightgroupspacegroup[`+i+`]">
+                  <div class="input-group col-md-10 mb-3 spacedata" id="inputrightgroupspacegroup[`+i+`]">
       
                   <input type="number" class="form-control" name="field" placeholder="slot number to hold [max value:`+HRmaxvalues+`]" id="inputHrightslotspaceitemindex[`+i+`]" min="1" max="`+HRmaxvalues+`" required>
                  

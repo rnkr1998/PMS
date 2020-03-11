@@ -1,8 +1,13 @@
 
       
+.container-scroller
+{
 
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
       .horizontal-parking{
+        
         /* background-image: url(s6.jpg);
          background-repeat: no-repeat;
          background-size: cover;*/
@@ -292,20 +297,20 @@
           padding:7px;
           font-size: 5px;
           margin:2px;
-          border:1px solid #259c56;
+          border:2px solid #259c56;
         }
         .open-lane-div
         {
           margin:2px;
           padding:7px;
-          border:2px solid #1d8046;
+          border:3px solid #1d8046;
           
         }
         .inputdata
         {
           margin:5px;
           padding:7px;
-          border:3px solid #38d679;
+          border:1px solid #38d679;
          
          
         }
@@ -333,7 +338,7 @@
         .form-control
         {
           padding:10px;
-          font-size: 17px;
+          font-size: 15px;
           height:2.5rem;
         }
 
