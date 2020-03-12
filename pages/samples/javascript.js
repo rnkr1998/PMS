@@ -55,7 +55,7 @@
                      `<div class="inputcontent"> 
                      
                        <div class="inputdata" >
-                       <h4>HORIZONTAL-LEFT-SIDE[ROW-`+i+`]:</h4>
+                       <h5>HORIZONTAL-LEFT-SIDE[ROW-`+i+`]:</h5>
                         
                          <div class="input-group  mb-3 " id="inputleftgroup[`+i+`]">
                       
@@ -76,7 +76,7 @@
                     `
                 
                     <div class="inputdata" id=inputrightdata[`+i+`]>
-                    <h4>HORIZONTAL-RIGHT-SIDE[ROW-`+i+`]</h4>
+                    <h5>HORIZONTAL-RIGHT-SIDE[ROW-`+i+`]</h5>
                     
                     <div class="input-group mb-3 " id="inputrightgroup[`+i+`]">
                      
@@ -146,7 +146,7 @@ function Rchangeofslot(a)
                 
               
                   space=space+`
-                  <h6>HORIZONTAL-LEFT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`</h6>
+                  <h7>HORIZONTAL-LEFT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`</h7>
                   
                   <div class="input-group  col-md-10 mb-3" id="inputleftgroupspacegroup[`+i+`]">
       
@@ -192,7 +192,7 @@ function Rchangeofslot(a)
               for(i=1;i<=id;i++)
               {
                   space=space+`
-                  <h6>HORIZONTAL-RIGHT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`</h6>
+                  <h7>HORIZONTAL-RIGHT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`</h7>
                   
                   <div class="input-group col-md-10 mb-3 spacedata" id="inputrightgroupspacegroup[`+i+`]">
       
@@ -412,7 +412,6 @@ function display2()
             form.classList.add('was-validated');
             display();
           
-
          
         }
        

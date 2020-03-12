@@ -55,14 +55,14 @@
                         `<div class="inputcontent"> 
                         
                           <div class="inputdata" >
-                          <h4>HORIZONTAL-LEFT-SIDE[ROW-`+i+`]:</h4>
+                          <h4>LEFT-SIDE[ROW-`+i+`]:</h4>
                            
                             <div class="input-group col-md-12 mb-3 " id="inputleftgroup[`+i+`]">
                          
                         <input type="number" class="form-control" name="field" placeholder="No.of slots [max value:1000]" id="inputHleftslots[`+i+`]" min="0" max="1000" oninput="Lchangeofslot(`+i+`)" required >
                       
                      
-                       <input type="number" class="form-control" name="field" placeholder="No.of space items [max value:100]" id="inputHleftspaceitems[`+i+`]" min="0" max="100" oninput="horizontalleftspaces(value,`+i+`)" required>
+                       <input type="number" class="form-control" name="field" placeholder="No.of pillars [max value:100]" id="inputHleftpillar[`+i+`]" min="0" max="100" oninput="horizontalleftspaces(value,`+i+`)" required>
                        
                    
                        </div>
@@ -76,13 +76,13 @@
                        `
                    
                        <div class="inputdata" id=inputrightdata[`+i+`]>
-                       <h4>HORIZONTAL-RIGHT-SIDE[ROW-`+i+`]</h4>
+                       <h4>RIGHT-SIDE[ROW-`+i+`]</h4>
                        
                        <div class="input-group col-md-12 mb-3 " id="inputrightgroup[`+i+`]">
                         
                            <input type="number" class="form-control" name="field" placeholder="No.of slots [max value:1000]" id="inputHrightslots[`+i+`]" min="0" max="1000" oninput="Rchangeofslot(`+i+`)" required >
                           
-                           <input type="number" class="form-control" name="field" placeholder="No.of space items [max value:100]" id="inputHrightspaceitems[`+i+`]"  min="0" max="100" oninput="horizontalrightspaces(value,`+i+`)" required>
+                           <input type="number" class="form-control" name="field" placeholder="No.of pillars [max value:100]" id="inputHrightpillar[`+i+`]"  min="0" max="100" oninput="horizontalrightspaces(value,`+i+`)" required>
                          
                          </div>
                          <div class="input-group mb-3 justify-content-md-center" id="inputHrightspaceitemdata[`+i+`]">
@@ -116,7 +116,7 @@
          }
    function Lchangeofslot(a)
    {
-     document.getElementById("inputHleftspaceitems["+a+"]").value="";
+     document.getElementById("inputHleftpillar["+a+"]").value="";
    
      document.getElementById("inputHleftspaceitemdata["+a+"]").innerHTML ="";
    
@@ -125,7 +125,7 @@
    function Rchangeofslot(a)
    {
    
-     document.getElementById("inputHrightspaceitems["+a+"]").value="";
+     document.getElementById("inputHrightpillar["+a+"]").value="";
    
      document.getElementById("inputHrightspaceitemdata["+a+"]").innerHTML ="";
    
@@ -137,7 +137,8 @@
              var space="";
              var leftid=id;
              var HLmaxvalues=document.getElementById("inputHleftslots["+Hlanes+"]").value;
-   
+             var HLpillarmaxvalues=document.getElementById("inputHleftpillar["+Hlanes+"]").value;
+             
                 
             if(HLmaxvalues>0)
             {
@@ -146,13 +147,13 @@
                    
                  
                      space=space+`
-                     <h6>HORIZONTAL-LEFT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`</h6>
+                     <h6>LEFT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`</h6>
                      
                      <div class="input-group  col-md-10 mb-3" id="inputleftgroupspacegroup[`+i+`]">
          
-                       <input type="number" class="form-control" name="field" placeholder="slot number to hold [max value:`+HLmaxvalues+`]" id="inputHleftslotspaceitemindex[`+i+`]" min="1" max="`+HLmaxvalues+`" required>
+                       <input type="number" class="form-control" name="field" placeholder="Pillar number [max value:`+HLpillarmaxvalues+`]" id="inputHleftslotspaceitemindex[`+i+`]" min="1" max="`+HLpillarmaxvalues+`" required>
                    
-                       <input type="number" class="form-control" name="field" placeholder="No.of spaces [max value:20]" id="inputHleftslotspaces[`+i+`]" min="0" max="20" required>
+                       <input type="number" class="form-control" name="field" placeholder="No.of slots [max value:10]" id="inputHleftslotspaces[`+i+`]" min="0" max="10" required>
                     
                        </div>`
                  }
@@ -186,19 +187,20 @@
              var space="";
          
              var HRmaxvalues=document.getElementById("inputHrightslots["+Hlanes+"]").value;
+             var HRpillarmaxvalues=document.getElementById("inputHrightpillar["+Hlanes+"]").value;
              if(HRmaxvalues>0)
              {
                
                  for(i=1;i<=id;i++)
                  {
                      space=space+`
-                     <h6>HORIZONTAL-RIGHT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`</h6>
+                     <h6>RIGHT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`</h6>
                      
                      <div class="input-group col-md-10 mb-3 spacedata" id="inputrightgroupspacegroup[`+i+`]">
          
-                     <input type="number" class="form-control" name="field" placeholder="slot number to hold [max value:`+HRmaxvalues+`]" id="inputHrightslotspaceitemindex[`+i+`]" min="1" max="`+HRmaxvalues+`" required>
+                     <input type="number" class="form-control" name="field" placeholder="Pillar number [max value:`+HRpillarmaxvalues+`]" id="inputHrightslotspaceitemindex[`+i+`]" min="1" max="`+HRpillarmaxvalues+`" required>
                     
-                     <input type="number" class="form-control" name="field" placeholder="No.of spaces [max value:20]" id="inputHrightslotspaces[`+i+`]" min="0" max="20" required>
+                     <input type="number" class="form-control" name="field" placeholder="No.of slots [max value:10]" id="inputHrightslotspaces[`+i+`]" min="0" max="10" required>
                    
                         </div>`
                  }
@@ -242,8 +244,10 @@
      res=res+`<div class="car-row pull-left">`
       
    
-     var inputHleftskotss= document.getElementById("inputHleftslots["+i+"]").value;
-     var inputHrightslotss= document.getElementById("inputHrightslots["+i+"]").value;
+     var inputHleftskotss= document.getElementById("inputHleftpillar["+i+"]").value;
+     var inputHrightslotss= document.getElementById("inputHrightpillar["+i+"]").value;
+
+     
     
      res=res+` <div class="clearfix-grass">
                      
@@ -258,9 +262,9 @@
             
            
                  
-                   <div class="cars-container available "  id="`+(String.fromCharCode(64+i))+`1S`+j+`"  onclick="myfun(id)">
-                     <div class="car"></div>
-                     <span>S`+j+`</span>
+                   <div class="pillar-container" id="LP`+j+`"  onclick="myfun(id)">
+                   <div class="pillar"></div>
+                     <span>Pillar`+j+`</span>
                    </div>
                   `
        }
@@ -280,8 +284,8 @@
             
            
         
-                   <div class="cars-container available " id="`+(String.fromCharCode(64+i))+`2S`+k+`"  onclick="myfun(id)">
-                     <div class="car"></div>
+                   <div class="pillar-container" id="RP`+k+`"  onclick="myfun(id)">
+                     <div class="pillar"></div>
                      <span>S`+k+`</span>
                    </div>
                   `
@@ -324,8 +328,8 @@
    
      for(i=1;i<=Hlanes;i++)
    {
-     var leftids=document.getElementById("inputHleftspaceitems["+i+"]").value;
-     var rightids=document.getElementById("inputHrightspaceitems["+i+"]").value;
+     var leftids=document.getElementById("inputHleftpillar["+i+"]").value;
+     var rightids=document.getElementById("inputHrightpillar["+i+"]").value;
    
      for(l=1;l<=leftids;l++)
     {
@@ -335,13 +339,16 @@
    
              var spaces="";
    
-             var element=document.getElementById((String.fromCharCode(64+i))+"1S"+after);
+             var element=document.getElementById("LP"+after);
    
                  for(j=1;j<=num;j++)
                  {
                    
                    spaces=spaces+`
-                   <div class="space-container" > <span class="hspace" ></span></div>
+                   <div class="cars-container available "  id="`+(String.fromCharCode(64+i))+`1S`+j+`"  onclick="myfun(id)">
+                   <div class="car"></div>
+                   <span>S`+j+`</span>
+                 </div>
    
    
                    `
@@ -363,12 +370,15 @@
                       console.log(after);
                       console.log(num);
                       var spices="";
-                      var elementer=document.getElementById((String.fromCharCode(64+i))+"2S"+after);
+                      var elementer=document.getElementById("RP"+after);
                           for(j=1;j<=num;j++)
                           {
                           
                             spices=spices+`
-                            <div class="space-container" > <span class="hspace" ></span></div>
+                            <div class="cars-container available "  id="`+(String.fromCharCode(64+i))+`1S`+j+`"  onclick="myfun(id)">
+                            <div class="car"></div>
+                            <span>S`+j+`</span>
+                          </div>
                             `
                           
                                  }
