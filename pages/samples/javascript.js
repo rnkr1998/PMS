@@ -57,7 +57,7 @@
                        <div class="inputdata" >
                        <h4>HORIZONTAL-LEFT-SIDE[ROW-`+i+`]:</h4>
                         
-                         <div class="input-group col-md-12 mb-3 " id="inputleftgroup[`+i+`]">
+                         <div class="input-group  mb-3 " id="inputleftgroup[`+i+`]">
                       
                      <input type="number" class="form-control" name="field" placeholder="No.of slots [max value:1000]" id="inputHleftslots[`+i+`]" min="0" max="1000" oninput="Lchangeofslot(`+i+`)" required >
                    
@@ -78,7 +78,7 @@
                     <div class="inputdata" id=inputrightdata[`+i+`]>
                     <h4>HORIZONTAL-RIGHT-SIDE[ROW-`+i+`]</h4>
                     
-                    <div class="input-group col-md-12 mb-3 " id="inputrightgroup[`+i+`]">
+                    <div class="input-group mb-3 " id="inputrightgroup[`+i+`]">
                      
                         <input type="number" class="form-control" name="field" placeholder="No.of slots [max value:1000]" id="inputHrightslots[`+i+`]" min="0" max="1000" oninput="Rchangeofslot(`+i+`)" required >
                        
