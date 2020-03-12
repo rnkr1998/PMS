@@ -151,9 +151,9 @@
                      
                      <div class="input-group  col-md-10 mb-3" id="inputleftgroupspacegroup[`+i+`]">
          
-                       <input type="number" class="form-control" name="field" placeholder="Pillar number [max value:`+HLpillarmaxvalues+`]" id="inputHleftslotspaceitemindex[`+i+`]" min="1" max="`+HLpillarmaxvalues+`" required>
+                       <input type="number" class="form-control" name="field" placeholder="Pillar number [max value:`+HLpillarmaxvalues+`]" id="inputHleftslotspaceitemindex[`+i+`]" min="1" max="`+HLpillarmaxvalues+`"  required>
                    
-                       <input type="number" class="form-control" name="field" placeholder="No.of slots [max value:10]" id="inputHleftslotspaces[`+i+`]" min="0" max="10" required>
+                       <input type="number" class="form-control" name="field" placeholder="No.of slots [max value:10]" id="inputHleftslotspaces[`+i+`]" min="0" max="10" oninput="Lget(`+id+`,`+HLmaxvalues+`)" required>
                     
                        </div>`
                  }
@@ -179,13 +179,36 @@
    
          }
    
+
+         function Lget(id,doc)
+         {
+           var i;
+           var sum=0;
+        
+        
+           for(i=1;i<=id;i++)
+           {
+             
+             sum=sum+parseInt(document.getElementById("inputHleftslotspaces["+i+"]").value);
+
+           }
+           console.log(sum);
+
+           if(doc!=sum)
+           {
+             console.log("error");
+           }
+           else{
+             console.log("MATCHED");
+           }
+         }
    
          function horizontalrightspaces(id,Hlanes)
          {
              
              var i;
              var space="";
-         
+             var sum=0;
              var HRmaxvalues=document.getElementById("inputHrightslots["+Hlanes+"]").value;
              var HRpillarmaxvalues=document.getElementById("inputHrightpillar["+Hlanes+"]").value;
              if(HRmaxvalues>0)
@@ -198,9 +221,9 @@
                      
                      <div class="input-group col-md-10 mb-3 spacedata" id="inputrightgroupspacegroup[`+i+`]">
          
-                     <input type="number" class="form-control" name="field" placeholder="Pillar number [max value:`+HRpillarmaxvalues+`]" id="inputHrightslotspaceitemindex[`+i+`]" min="1" max="`+HRpillarmaxvalues+`" required>
+                     <input type="number" class="form-control" name="field" placeholder="Pillar number [max value:`+HRpillarmaxvalues+`]" id="inputHrightslotspaceitemindex[`+i+`]" min="1" max="`+HRpillarmaxvalues+`" required >
                     
-                     <input type="number" class="form-control" name="field" placeholder="No.of slots [max value:10]" id="inputHrightslotspaces[`+i+`]" min="0" max="10" required>
+                     <input type="number" class="form-control" name="field" placeholder="No.of slots [max value:10]" id="inputHrightslotspaces[`+i+`]" min="0" max="10" oninput="Rget(`+id+`,`+HRmaxvalues+`)" required>
                    
                         </div>`
                  }
@@ -211,7 +234,28 @@
                }
          }
         
-   
+         function Rget(id,doc)
+         {
+           var i;
+           var sum=0;
+        
+        
+           for(i=1;i<=id;i++)
+           {
+             
+             sum=sum+parseInt(document.getElementById("inputHrightslotspaces["+i+"]").value);
+
+           }
+           console.log(sum);
+
+           if(doc!=sum)
+           {
+             console.log("error");
+           }
+           else{
+             console.log("MATCHED");
+           }
+         }
    
         
    
@@ -262,9 +306,9 @@
             
            
                  
-                   <div class="pillar-container" id="LP`+j+`"  onclick="myfun(id)">
+                   <div class="pillar-container" id="LP`+j+`">
                    <div class="pillar"></div>
-                     <span>Pillar`+j+`</span>
+                     <span>P`+j+`</span>
                    </div>
                   `
        }
@@ -284,9 +328,9 @@
             
            
         
-                   <div class="pillar-container" id="RP`+k+`"  onclick="myfun(id)">
+                   <div class="pillar-container" id="RP`+k+`">
                      <div class="pillar"></div>
-                     <span>S`+k+`</span>
+                     <span>P`+k+`</span>
                    </div>
                   `
        }

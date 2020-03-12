@@ -410,7 +410,8 @@ function display2()
             event.preventDefault();
             event.stopPropagation();
             form.classList.add('was-validated');
-            display();
+           
+            Vdisplay();
           
          
         }
@@ -448,3 +449,387 @@ function display2()
     });
   }, false);
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function Vinner()
+{
+  
+    var Vlanes=document.getElementById("ver").value;  
+    
+    
+    
+  
+    var data="";
+    var inputdata ="";
+  
+    
+     var i;
+     if(Vlanes>=1 && Vlanes<=26)
+     {
+         for(i=1;i<=Vlanes;i++)
+       {
+            
+           
+               inputdata = inputdata +
+               `<div class="inputcontent"> 
+               
+                 <div class="inputdata" >
+                 <h5>VERTICAL-LEFT-SIDE[ROW-`+i+`]:</h5>
+                  
+                   <div class="input-group  mb-3 " id="inputleftgroup[`+i+`]">
+                
+               <input type="number" class="form-control" name="field" placeholder="No.of slots [max value:1000]" id="inputVleftslots[`+i+`]" min="0" max="1000" oninput="VLchangeofslot(`+i+`)" required >
+             
+            
+              <input type="number" class="form-control" name="field" placeholder="No.of space items [max value:100]" id="inputVleftspaceitems[`+i+`]" min="0" max="100" oninput="verticalleftspaces(value,`+i+`)" required>
+              
+          
+              </div>
+              <div class="input-group mb-3 justify-content-md-center" id="inputVleftspaceitemdata[`+i+`]">
+             
+              </div>
+            
+              </div>
+              `+
+            
+              `
+          
+              <div class="inputdata" id=inputrightdata[`+i+`]>
+              <h5>VERTICAL-RIGHT-SIDE[ROW-`+i+`]</h5>
+              
+              <div class="input-group mb-3 " id="inputrightgroup[`+i+`]">
+               
+                  <input type="number" class="form-control" name="field" placeholder="No.of slots [max value:1000]" id="inputVrightslots[`+i+`]" min="0" max="1000" oninput="VRchangeofslot(`+i+`)" required >
+                 
+                  <input type="number" class="form-control" name="field" placeholder="No.of space items [max value:100]" id="inputVrightspaceitems[`+i+`]"  min="0" max="100" oninput="verticalrightspaces(value,`+i+`)" required>
+                
+                </div>
+                <div class="input-group mb-3 justify-content-md-center" id="inputVrightspaceitemdata[`+i+`]">
+             
+                </div>
+              </div>`
+           
+              
+             
+              
+            
+           
+       
+             
+       }
+      
+       
+       document.getElementById("Vcontentdata").innerHTML =inputdata;
+  
+
+     }
+     else
+     {
+      document.getElementById("Vcontentdata").innerHTML ="";
+     }
+    
+    
+    
+   
+
+}
+function VLchangeofslot(a)
+{
+document.getElementById("inputVleftspaceitems["+a+"]").value="";
+
+document.getElementById("inputVleftspaceitemdata["+a+"]").innerHTML ="";
+
+
+}
+function VRchangeofslot(a)
+{
+
+document.getElementById("inputVrightspaceitems["+a+"]").value="";
+
+document.getElementById("inputVrightspaceitemdata["+a+"]").innerHTML ="";
+
+}
+function verticalleftspaces(id, Vlanes)
+{
+    
+    var i;
+    var space="";
+    var leftid=id;
+    var VLmaxvalues=document.getElementById("inputVleftslots["+Vlanes+"]").value;
+
+       
+   if(VLmaxvalues>0)
+   {
+        for(i=1;i<=id;i++)
+        {
+          
+        
+            space=space+`
+            <h7>VERTICAL-LEFT-SIDE[ROW-`+Vlanes+`]-SPACEITEM:`+i+`</h7>
+            
+            <div class="input-group  col-md-10 mb-3" id="VHinputleftgroupspacegroup[`+i+`]">
+
+              <input type="number" class="form-control" name="field" placeholder="slot number to hold [max value:`+VLmaxvalues+`]" id="inputVleftslotspaceitemindex[`+i+`]" min="1" max="`+VLmaxvalues+`" required>
+          
+              <input type="number" class="form-control" name="field" placeholder="No.of spaces [max value:20]" id="inputVleftslotspaces[`+i+`]" min="0" max="20" required>
+           
+              </div>`
+        }
+        
+       
+    
+           
+         
+         
+           
+            
+     
+              
+        document.getElementById("inputVleftspaceitemdata["+Vlanes+"]").innerHTML =space;
+      }
+      else{
+        document.getElementById("inputVleftspaceitemdata["+Vlanes+"]").innerHTML ="";
+      }
+    
+        
+       
+       
+
+}
+
+
+function verticalrightspaces(id,Vlanes)
+{
+    
+    var i;
+    var space="";
+
+    var VRmaxvalues=document.getElementById("inputVrightslots["+Vlanes+"]").value;
+    if(VRmaxvalues>0)
+    {
+      
+        for(i=1;i<=id;i++)
+        {
+            space=space+`
+            <h7>VERTICAL-RIGHT-SIDE[ROW-`+Vlanes+`]-SPACEITEM:`+i+`</h7>
+            
+            <div class="input-group col-md-10 mb-3 spacedata" id="VRinputrightgroupspacegroup[`+i+`]">
+
+            <input type="number" class="form-control" name="field" placeholder="slot number to hold [max value:`+VRmaxvalues+`]" id="inputHrightslotspaceitemindex[`+i+`]" min="1" max="`+VRmaxvalues+`" required>
+           
+            <input type="number" class="form-control" name="field" placeholder="No.of spaces [max value:20]" id="inputVrightslotspaces[`+i+`]" min="0" max="20" required>
+          
+               </div>`
+        }
+        document.getElementById("inputVrightspaceitemdata["+Vlanes+"]").innerHTML=space;
+      }
+      else{
+        document.getElementById("inputVrightspaceitemdata["+Vlanes+"]").innerHTML="";
+      }
+}
+
+
+
+
+
+
+
+
+
+
+//render slots and slot items
+
+function Vdisplay()
+{
+
+
+var i,j,k,l,m;
+var Vlanes=document.getElementById("ver").value;
+var dis=document.getElementById("Vsec");
+var ress=`   <section class="vertical-parking">
+ `;
+
+
+for(i=1;i<=Vlanes;i++)
+{
+
+  ress=ress+`<div class="column-set">`
+  
+var inputVleftskotss= document.getElementById("inputVleftslots["+i+"]").value;
+var inputVrightslotss= document.getElementById("inputVrightslots["+i+"]").value;
+ress=ress+`
+
+<div class="car-row pull-left">
+<div class="vertical-left">
+  <div class="vertical-row-number">
+    <div class="row-number"> <span>`+(String.fromCharCode(64+i))+`1</span>
+    </div>  
+  </div>`
+
+
+
+
+for(j=1;j<=inputVleftskotss;j++)
+{
+   ress=ress+`
+   
+          <div class="cars-container available" id="V`+(String.fromCharCode(64+i))+`1S`+j+`" onclick="myfun(id)>
+      <div class="car"></div>
+      <span>S`+j+`</span>
+    </div>
+    
+         `
+}
+
+
+
+
+
+
+ 
+ ress=ress+`
+ <div class="entry-points">
+<span style="bottom: 30px;"><i class="fa fa-arrow-circle-right"></i> ENTRY</span> 
+<span style="top: 15px;"><i class="fa fa-arrow-circle-right"></i> EXIT </span> 
+</div>
+</div>
+</div>
+<div class="car-row pull-left">
+    <div class="vertical-right">
+      <div class="vertical-row-number">
+        <div class="row-number"> <span>`+(String.fromCharCode(64+i))+`2</span></div>
+        
+      </div>`
+
+
+for(k=1;k<=inputVrightslotss;k++)
+{
+   ress=ress+`
+   
+
+          <div class="cars-container available" id="V`+(String.fromCharCode(64+i))+`2S`+k+`" onclick="myfun(id)">
+          <div class="car"></div>
+          <span>S`+k+`</span>
+        </div>
+         `
+}
+
+
+ress=ress+` 
+</div></div>
+<div class="car-row pull-left">
+  <div class="clearfix-grass">
+
+  </div>
+
+
+</div>
+</div>
+`
+
+
+
+
+         
+
+}
+ress=ress+`</section>`
+dis.innerHTML=ress;
+
+
+
+
+
+}
+
+
+//render spaces
+function display2()
+{
+
+
+$(".content-wrapper2").show(800);
+var i,j,k,l,m;
+
+
+var Hlanes=document.getElementById("hor").value;
+
+for(i=1;i<=Hlanes;i++)
+{
+var leftids=document.getElementById("inputHleftspaceitems["+i+"]").value;
+var rightids=document.getElementById("inputHrightspaceitems["+i+"]").value;
+
+for(l=1;l<=leftids;l++)
+{
+    var num=document.getElementById("inputHleftslotspaces["+l+"]").value;
+    var after=document.getElementById("inputHleftslotspaceitemindex["+l+"]").value;
+   
+
+    var spaces="";
+
+    var element=document.getElementById((String.fromCharCode(64+i))+"1S"+after);
+
+        for(j=1;j<=num;j++)
+        {
+          
+          spaces=spaces+`
+          <div class="space-container" > <span class="hspace" ></span></div>
+
+
+          `
+        
+         }
+    
+   
+   
+
+    
+   
+    $(element).after(spaces);
+
+        }
+    for(m=1;m<=rightids;m++)
+    {
+             var num=document.getElementById("inputHrightslotspaces["+m+"]").value;
+             var after=document.getElementById("inputHrightslotspaceitemindex["+m+"]").value;
+             console.log(after);
+             console.log(num);
+             var spices="";
+             var elementer=document.getElementById((String.fromCharCode(64+i))+"2S"+after);
+                 for(j=1;j<=num;j++)
+                 {
+                 
+                   spices=spices+`
+                   <div class="space-container" > <span class="hspace" ></span></div>
+                   `
+                 
+                        }
+
+
+             console.log(element);
+
+
+             
+             $(elementer).after(spices);
+}
+
+    
+}
+
+
+
+}
