@@ -144,8 +144,7 @@
        .vertical-parking{
          background-color: #196F3D ; 
         
-      overflow-x: scroll;
-      overflow-y: scroll;
+     overflow: scroll;
          border: 40px solid rgba(0,0,0, 0.4);
          padding: 10px;
          width:100%;
@@ -159,7 +158,8 @@
        .vertical-parking .column-set
        {
         
-       display: inline-block;
+       display: inline;
+    
          
        }
        .vertical-parking .cars-container{
@@ -172,6 +172,17 @@
          margin-bottom: 10px;
         
        }
+       .vertical-parking .space-container{
+        background-color: #196F3D ; 
+        color: white;
+        height: 34px;
+        width: 60px;
+        text-align: right;
+        font-size: 10px;
+        font-weight: bold;
+        margin-bottom: 10px;
+       
+      }
        .vertical-parking .car-row{
          position: relative;
          width: 90px;
@@ -292,6 +303,10 @@
        
        width:100px;
        
+      }
+      .vspace
+      {
+        width:100%;
       }
 
       .form-control

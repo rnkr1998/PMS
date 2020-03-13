@@ -360,8 +360,7 @@ function display2()
           {
                    var num=document.getElementById("inputHrightslotspaces["+m+"]").value;
                    var after=document.getElementById("inputHrightslotspaceitemindex["+m+"]").value;
-                   console.log(after);
-                   console.log(num);
+                  
                    var spices="";
                    var elementer=document.getElementById((String.fromCharCode(64+i))+"2S"+after);
                        for(j=1;j<=num;j++)
@@ -374,7 +373,7 @@ function display2()
                               }
 
 
-                   console.log(element);
+                  
 
 
                    
@@ -424,7 +423,7 @@ function display2()
             else
             {
               display();
-              Vdisplay();s
+              Vdisplay();
             }
           
          
@@ -653,7 +652,7 @@ function verticalrightspaces(id,Vlanes)
             
             <div class="input-group col-md-10 mb-3 spacedata" id="VRinputrightgroupspacegroup[`+i+`]">
 
-            <input type="number" class="form-control" name="field" placeholder="slot number to hold [max value:`+VRmaxvalues+`]" id="inputHrightslotspaceitemindex[`+i+`]" min="1" max="`+VRmaxvalues+`" required>
+            <input type="number" class="form-control" name="field" placeholder="slot number to hold [max value:`+VRmaxvalues+`]" id="inputVrightslotspaceitemindex[`+i+`]" min="1" max="`+VRmaxvalues+`" required>
            
             <input type="number" class="form-control" name="field" placeholder="No.of spaces [max value:20]" id="inputVrightslotspaces[`+i+`]" min="0" max="20" required>
           
@@ -680,11 +679,11 @@ function verticalrightspaces(id,Vlanes)
 function Vdisplay()
 {
 
-
+  $(".content-wrapper3").hide();
 var i,j,k,l,m;
 var Vlanes=document.getElementById("ver").value;
 var dis=document.getElementById("Vsec");
-var ress=`   <section class="vertical-parking">
+var ress=` <section class="vertical-parking">
  `;
 
 
@@ -693,51 +692,54 @@ for(i=1;i<=Vlanes;i++)
 
   ress=ress+`<div class="column-set">`
   
-var inputVleftskotss= document.getElementById("inputVleftslots["+i+"]").value;
+var inputVleftslotss= document.getElementById("inputVleftslots["+i+"]").value;
 var inputVrightslotss= document.getElementById("inputVrightslots["+i+"]").value;
+
 ress=ress+`
 
+    
 <div class="car-row pull-left">
-<div class="vertical-left">
+<div class="vertical-right">
   <div class="vertical-row-number">
-    <div class="row-number"> <span>`+(String.fromCharCode(64+i))+`1</span>
-    </div>  
-  </div>`
+    <div class="row-number"> <span>`+(String.fromCharCode(64+i))+`1</span></div>    
+  </div>
+
+      `
+        
+      
 
 
 
 
-for(j=1;j<=inputVleftskotss;j++)
+for(j=1;j<=inputVleftslotss;j++)
 {
    ress=ress+`
    
-          <div class="cars-container available" id="V`+(String.fromCharCode(64+i))+`1S`+j+`" onclick="myfun(id)>
-      <div class="car"></div>
-      <span>S`+j+`</span>
-    </div>
-    
-         `
+   <div class="cars-container available" id="V`+(String.fromCharCode(64+i))+`1P`+j+`" onclick="myfun(id)">
+   <div class="car"></div>
+   <span>P`+j+`</span>
+ </div>`
 }
 
 
-
-
-
-
- 
  ress=ress+`
  <div class="entry-points">
-<span style="bottom: 30px;"><i class="fa fa-arrow-circle-right"></i> ENTRY</span> 
-<span style="top: 15px;"><i class="fa fa-arrow-circle-right"></i> EXIT </span> 
-</div>
-</div>
-</div>
+      <span style="bottom: 30px;"><i class="fa fa-arrow-circle-right"></i> ENTRY</span> 
+      <span style="top: 15px;"><i class="fa fa-arrow-circle-right"></i> EXIT </span> 
+    </div>
+  </div>
+</div>`
+
+ress=ress+`
+
+
 <div class="car-row pull-left">
     <div class="vertical-right">
       <div class="vertical-row-number">
-        <div class="row-number"> <span>`+(String.fromCharCode(64+i))+`2</span></div>
-        
-      </div>`
+        <div class="row-number"> <span>`+(String.fromCharCode(64+i))+`2</span></div>    
+      </div>
+
+      `
 
 
 for(k=1;k<=inputVrightslotss;k++)
@@ -745,9 +747,9 @@ for(k=1;k<=inputVrightslotss;k++)
    ress=ress+`
    
 
-          <div class="cars-container available" id="V`+(String.fromCharCode(64+i))+`2S`+k+`" onclick="myfun(id)">
+          <div class="cars-container available" id="V`+(String.fromCharCode(64+i))+`2P`+k+`" onclick="myfun(id)">
           <div class="car"></div>
-          <span>S`+k+`</span>
+          <span>P`+k+`</span>
         </div>
          `
 }
@@ -760,58 +762,51 @@ ress=ress+`
 
   </div>
 
+</div></div>
 
-</div>
-</div>
 `
-
-
-
-
-         
 
 }
 ress=ress+`</section>`
 dis.innerHTML=ress;
 
-
-
+display3();
 
 
 }
 
 
 //render spaces
-function display2()
+function display3()
 {
 
 
-$(".content-wrapper2").show(800);
+$(".content-wrapper3").show(800);
 var i,j,k,l,m;
 
 
-var Hlanes=document.getElementById("hor").value;
+var Vlanes=document.getElementById("ver").value;
 
-for(i=1;i<=Hlanes;i++)
+for(i=1;i<=Vlanes;i++)
 {
-var leftids=document.getElementById("inputHleftspaceitems["+i+"]").value;
-var rightids=document.getElementById("inputHrightspaceitems["+i+"]").value;
+var leftids=document.getElementById("inputVleftspaceitems["+i+"]").value;
+var rightids=document.getElementById("inputVrightspaceitems["+i+"]").value;
 
 for(l=1;l<=leftids;l++)
 {
-    var num=document.getElementById("inputHleftslotspaces["+l+"]").value;
-    var after=document.getElementById("inputHleftslotspaceitemindex["+l+"]").value;
-   
+    var num=document.getElementById("inputVleftslotspaces["+l+"]").value;
+    var after=document.getElementById("inputVleftslotspaceitemindex["+l+"]").value;
+ 
 
-    var spaces="";
+    var spaces="";              
 
-    var element=document.getElementById((String.fromCharCode(64+i))+"1S"+after);
+    var element=document.getElementById("V"+(String.fromCharCode(64+i))+"1P"+after);
 
         for(j=1;j<=num;j++)
         {
           
           spaces=spaces+`
-          <div class="space-container" > <span class="hspace" ></span></div>
+          <div class="space-container" ><div class="car"></div> <span class="vspace" ></span></div>
 
 
           `
@@ -828,23 +823,23 @@ for(l=1;l<=leftids;l++)
         }
     for(m=1;m<=rightids;m++)
     {
-             var num=document.getElementById("inputHrightslotspaces["+m+"]").value;
-             var after=document.getElementById("inputHrightslotspaceitemindex["+m+"]").value;
-             console.log(after);
-             console.log(num);
+             var num=document.getElementById("inputVrightslotspaces["+m+"]").value;
+             var after=document.getElementById("inputVrightslotspaceitemindex["+m+"]").value;
+   
              var spices="";
-             var elementer=document.getElementById((String.fromCharCode(64+i))+"2S"+after);
+             var elementer=document.getElementById("V"+(String.fromCharCode(64+i))+"2P"+after);
                  for(j=1;j<=num;j++)
                  {
                  
                    spices=spices+`
-                   <div class="space-container" > <span class="hspace" ></span></div>
+                   <div class="space-container" > <span class="hspace" >
+                  </span></div>
                    `
                  
                         }
 
 
-             console.log(element);
+             
 
 
              
