@@ -434,6 +434,7 @@ function display2()
         if (form.checkValidity() === false) {
           event.preventDefault();
           event.stopPropagation();
+          
           form.classList.add('was-validated');
         
         }
@@ -441,7 +442,16 @@ function display2()
           event.preventDefault();
           event.stopPropagation();
           form.classList.add('was-validated');
+          var op=parseInt(document.getElementById("selectoption").value);
+          
+          if(op==0)
+          {
           window.location.href="innerforloop.html";
+          }
+          else if(op==1)
+          {
+            window.location.href="pillerloop.html";
+          }
         }
        
         
