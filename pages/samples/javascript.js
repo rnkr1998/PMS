@@ -410,8 +410,22 @@ function display2()
             event.preventDefault();
             event.stopPropagation();
             form.classList.add('was-validated');
-           
+
+            var Hlanes=document.getElementById("hor").value;  
+            var Vlanes=document.getElementById("ver").value;  
+            if(Hlanes>0 && Vlanes<=0)
+            {
+            display();
+            }
+            else if(Vlanes>0 && Hlanes<=0)
+            {
             Vdisplay();
+            }
+            else
+            {
+              display();
+              Vdisplay();s
+            }
           
          
         }
