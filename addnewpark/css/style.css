@@ -1,6 +1,6 @@
 
       
-.container-scroller
+.container
 {
 
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -273,18 +273,30 @@
        }
 
 
+
+
+       .form-control 
+       {
+         padding:10px;
+         font-size: 16px;
+         height:2.5rem;
+       }
+ 
+
+
+
 .body-content
 {
   border:2px solid #259c56;
  
-  margin:10px;
-  padding:25px;
+  font-size:10px;
+  padding:15px;
 }
 
     
 .open-lane-div
 {
-  margin:10px;
+  font-size:10px;
   padding:15px;
  
  
@@ -292,7 +304,7 @@
       .inputdata
       {
         border:1px solid #259c56;
-        margin:10px;
+        font-size:10px;
         padding:15px;
       
       
@@ -309,14 +321,27 @@
         width:100%;
       }
 
-      .form-control
+      h6
       {
-        padding:10px;
-        font-size: 17px;
-        height:2.8rem;
+       font-size:12px;
+       font-weight: bold;
       }
 
-
+      h1
+      {
+        font-weight:bold;
+        
+      }
+      h3
+      {
+        font-size: 24px;
+        font-weight:bold;
+      }
+      h5
+      {
+        font-size: 17px;
+        font-weight: bold;
+      }
 
 
 
@@ -353,24 +378,24 @@
          
          
         }
-        h7
+        h6
         {
-          font-size: 12px;
+          font-size: 10px;
           font-weight: bold;
         }
         h5
         {
-          font-size: 13px;
+          font-size: 14px;
           font-weight: bold;
         }
         h1
         {
-          font-size: 20px;
+          font-size: 25px;
           font-weight: bold;
         }
         h3
         {
-          font-size: 17px;
+          font-size: 18px;
           font-weight: bold;
         }
 

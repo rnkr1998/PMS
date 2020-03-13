@@ -59,10 +59,10 @@
                            
                             <div class="input-group col-md-12 mb-3 " id="inputleftgroup[`+i+`]">
                          
-                        <input type="number" class="form-control" name="field" placeholder="No.of slots [max value:1000]" id="inputHleftslots[`+i+`]" min="0" max="1000" oninput="Lchangeofslot(`+i+`)" required >
+                        <input type="number"  style="height:2.9rem; font-size:16px"class="form-control" name="field" placeholder="No.of slots [max value:1000]" id="inputHleftslots[`+i+`]" min="0" max="1000" oninput="Lchangeofslot(`+i+`)" required >
                       
                      
-                       <input type="number" class="form-control" name="field" placeholder="No.of pillars [max value:100]" id="inputHleftpillar[`+i+`]" min="0" max="100" oninput="horizontalleftspaces(value,`+i+`)" required>
+                       <input type="number" style="height:2.9rem; font-size:16px" class="form-control" name="field" placeholder="No.of pillars [max value:100]" id="inputHleftpillar[`+i+`]" min="0" max="100" oninput="horizontalleftspaces(value,`+i+`)" required>
                        
                    
                        </div>
@@ -80,9 +80,9 @@
                        
                        <div class="input-group col-md-12 mb-3 " id="inputrightgroup[`+i+`]">
                         
-                           <input type="number" class="form-control" name="field" placeholder="No.of slots [max value:1000]" id="inputHrightslots[`+i+`]" min="0" max="1000" oninput="Rchangeofslot(`+i+`)" required >
+                           <input type="number" style="height:2.9rem; font-size:16px" class="form-control" name="field" placeholder="No.of slots [max value:1000]" id="inputHrightslots[`+i+`]" min="0" max="1000" oninput="Rchangeofslot(`+i+`)" required >
                           
-                           <input type="number" class="form-control" name="field" placeholder="No.of pillars [max value:100]" id="inputHrightpillar[`+i+`]"  min="0" max="100" oninput="horizontalrightspaces(value,`+i+`)" required>
+                           <input type="number" style="height:2.9rem; font-size:16px" class="form-control" name="field" placeholder="No.of pillars [max value:100]" id="inputHrightpillar[`+i+`]"  min="0" max="100" oninput="horizontalrightspaces(value,`+i+`)" required>
                          
                          </div>
                          <div class="input-group mb-3 justify-content-md-center" id="inputHrightspaceitemdata[`+i+`]">
@@ -149,11 +149,11 @@
                      space=space+`
                      <h6>LEFT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`</h6>
                      
-                     <div class="input-group  col-md-10 mb-3" id="inputleftgroupspacegroup[`+i+`]">
+                     <div class="input-group   col-md-10 mb-3" id="inputleftgroupspacegroup[`+i+`]">
          
-                       <input type="number" class="form-control" name="field" placeholder="Pillar number [max value:`+HLpillarmaxvalues+`]" id="inputHleftslotspaceitemindex[`+i+`]" min="1" max="`+HLpillarmaxvalues+`"  required>
+                       <input type="number"  class="form-control" name="field" placeholder="Pillar number [max value:`+HLpillarmaxvalues+`]" id="inputHleftslotspaceitemindex[`+i+`]" min="1" max="`+HLpillarmaxvalues+`"  required>
                    
-                       <input type="number" class="form-control" name="field" placeholder="No.of slots [max value:10]" id="inputHleftslotspaces[`+i+`]" min="0" max="10" oninput="Lget(`+id+`,`+HLmaxvalues+`)" required>
+                       <input type="number"  class="form-control" name="field" placeholder="No.of slots [max value:10]" id="inputHleftslotspaces[`+i+`]" min="0" max="10" oninput="Lget(`+id+`,`+HLmaxvalues+`)" required>
                     
                        </div>`
                  }
@@ -221,9 +221,9 @@
                      
                      <div class="input-group col-md-10 mb-3 spacedata" id="inputrightgroupspacegroup[`+i+`]">
          
-                     <input type="number" class="form-control" name="field" placeholder="Pillar number [max value:`+HRpillarmaxvalues+`]" id="inputHrightslotspaceitemindex[`+i+`]" min="1" max="`+HRpillarmaxvalues+`" required >
+                     <input type="number"  class="form-control" name="field" placeholder="Pillar number [max value:`+HRpillarmaxvalues+`]" id="inputHrightslotspaceitemindex[`+i+`]" min="1" max="`+HRpillarmaxvalues+`" required >
                     
-                     <input type="number" class="form-control" name="field" placeholder="No.of slots [max value:10]" id="inputHrightslotspaces[`+i+`]" min="0" max="10" oninput="Rget(`+id+`,`+HRmaxvalues+`)" required>
+                     <input type="number"  class="form-control" name="field" placeholder="No.of slots [max value:10]" id="inputHrightslotspaces[`+i+`]" min="0" max="10" oninput="Rget(`+id+`,`+HRmaxvalues+`)" required>
                    
                         </div>`
                  }
@@ -477,30 +477,4 @@
    })();
    
    
-   (function() {
-     'use strict';
-     window.addEventListener('load', function() {
-       // Fetch all the forms we want to apply custom Bootstrap validation styles to
-       var forms = document.getElementsByClassName('slot-create');
-       // Loop over them and prevent submission
-       var validation = Array.prototype.filter.call(forms, function(form) {
-         form.addEventListener('submit', function(event) {
-           if (form.checkValidity() === false) {
-             event.preventDefault();
-             event.stopPropagation();
-             form.classList.add('was-validated');
-           
-           }
-           if (form.checkValidity() === true) {
-             event.preventDefault();
-             event.stopPropagation();
-             form.classList.add('was-validated');
-             window.location.href="innerforloop.html";
-           }
-          
-           
-         }, false);
-       });
-     }, false);
-   })();
-   
+  
