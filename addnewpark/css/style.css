@@ -18,7 +18,7 @@
          border: 40px solid rgba(0,0,0, 0.4);
          padding: 0px;
          border-spacing: 10px;
-     
+        box-shadow: 20px 20px 50px 15px #196F3D ;
        
        }
        
@@ -28,7 +28,7 @@
         background-color: #419947;
          color: white;
          height: 72px;
-    
+         
          text-align: center;
          font-size: 10px;
          font-weight: bold;
@@ -149,7 +149,7 @@
          
          border: 40px solid rgba(0,0,0, 0.4);
          padding: 10px;
-       
+         box-shadow: 20px 20px 50px 15px #196F3D ;
         height:600px;
        }
        .vertical-parking > .hscrollable > .row-data { 
@@ -176,7 +176,7 @@
          font-size: 9px;
          font-weight: bold;
          margin-bottom: 10px;
-        
+       
        }
        .vertical-parking .space-container{
         background-color: #196F3D ; 
