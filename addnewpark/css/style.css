@@ -191,7 +191,7 @@
       }
        .vertical-parking .car-row{
          position: relative;
-         width: 90px;
+         width: 80px;
      
       
        }
@@ -210,7 +210,7 @@
       
        .vertical-parking .car-row:nth-child(2){
          width: auto;
-         padding-left: 15px;
+         padding-left: 9px;
        }
        .vertical-parking .car-row:nth-child(2) .cars-container{
          transform: rotate(0deg);
@@ -234,7 +234,7 @@
        }
        .vertical-parking .car-row:first-child{
          border-right: 2px solid wheat;
-         margin-right: 10px;
+         margin-right: 20px;
        }
        .vertical-parking .car-row:nth-child(2){
          border-left: 2px solid wheat;
@@ -244,11 +244,11 @@
          background-color: rgba(0,0,0, 0.4);
          color: wheat;
          font-size: 12px;
-         padding: 10px;
+         padding: 15px;
          position: absolute;
          top: 0;
-         right: -22px;
-         width: 20px;
+         right: -32px;
+         width: 25px;
          bottom: 0;
          border-top:0px;
        }
@@ -266,7 +266,7 @@
        .vertical-parking .car-row .entry-points span{
          transform: rotate(-90deg);
          position: absolute;
-         left: -15px;
+         left: -9px;
          width: 50px;
        }
 
