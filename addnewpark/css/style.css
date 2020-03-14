@@ -159,7 +159,7 @@
     } 
       
     .vertical-parking > .hscrollable > .row-data > .column-set { 
-        display: inline-block; 
+        display: inline-flex; 
         float: none; 
         margin-left: 20px;
         margin-right: 20px;
