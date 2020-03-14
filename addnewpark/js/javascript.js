@@ -647,7 +647,7 @@ var i,j,k,l,m;
 var Vlanes=document.getElementById("ver").value;
 var dis=document.getElementById("Vsec");
 var ress=` <section class="vertical-parking">
-<div class="container hscrollable">
+<div class="hscrollable">
 <div class="row-data">
  `;
 
@@ -664,7 +664,8 @@ ress=ress+`
 
     
 <div class="car-row pull-left">
-<div class="vertical-left">
+    <div class="vertical-left">
+
   <div class="vertical-row-number">
     <div class="row-number"> <span>`+(String.fromCharCode(64+i))+`1</span></div>    
   </div>
@@ -725,9 +726,10 @@ ress=ress+`
   <div class="clearfix-grass">
 
   </div>
-</div></div>
+</div>
 
 
+</div>
 </div></div>
 
 `
