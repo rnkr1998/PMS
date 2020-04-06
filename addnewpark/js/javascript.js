@@ -47,7 +47,9 @@
            var i;
            if(Hlanes>=1 && Hlanes<=26)
            {
+
                for(i=1;i<=Hlanes;i++)
+               
              {
                   
                  
@@ -152,7 +154,7 @@ function Rchangeofslot(a)
       
                     <input type="number" style="height:2.1rem;font-size:16px;"  class="form-control" name="field" placeholder="slot number to hold [max value:`+HLmaxvalues+`]" id="inputHleftslotspaceitemindex[`+i+`]" min="1" max="`+HLmaxvalues+`" required>
                 
-                    <input type="number" style="height:2.1rem;font-size:16px;"  class="form-control" name="field" placeholder="No.of spaces [max value:20]" id="inputHleftslotspaces[`+i+`]" min="0" max="20" required>
+                    <input type="number" style="height:2.1rem;font-size:16px;"  class="form-control" name="field" placeholder="No.of spaces [max value:20]" id="inputHleftslotspaces[`+i+`]" min="1" max="20" required>
                  
                     </div>`
               }
@@ -198,7 +200,7 @@ function Rchangeofslot(a)
       
                   <input type="number" style="height:2.1rem;font-size:16px;" class="form-control" name="field" placeholder="slot number to hold [max value:`+HRmaxvalues+`]" id="inputHrightslotspaceitemindex[`+i+`]" min="1" max="`+HRmaxvalues+`" required>
                  
-                  <input type="number" style="height:2.1rem;font-size:16px;" class="form-control" name="field" placeholder="No.of spaces [max value:20]" id="inputHrightslotspaces[`+i+`]" min="0" max="20" required>
+                  <input type="number" style="height:2.1rem;font-size:16px;" class="form-control" name="field" placeholder="No.of spaces [max value:20]" id="inputHrightslotspaces[`+i+`]" min="1" max="20" required>
                 
                      </div>`
               }
@@ -234,7 +236,9 @@ function display()
   var i,j,k,l,m;
   var Hlanes=document.getElementById("hor").value;
   var dis=document.getElementById("Hsec");
-  var res=` <section class="horizontal-parking container">`;
+  var res=` <section class="horizontal-parking">
+  <div class="hscrollable">
+<div class="row-data">`;
   
  
 for(i=1;i<=Hlanes;i++)
@@ -301,7 +305,7 @@ res=res+` <div class="clearfix-grass">
                
      
 }
-res=res+`</section>`
+res=res+`</div></div></section>`
 dis.innerHTML=res;
   
 
