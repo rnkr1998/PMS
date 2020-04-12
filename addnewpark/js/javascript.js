@@ -424,6 +424,10 @@ function display2()
             {
             Vdisplay();
             }
+            else if(Hlanes==0 && Vlanes==0)
+            {
+              alert("Aleast one value should be greater than zero!");
+            }
             else
             {
               display();
