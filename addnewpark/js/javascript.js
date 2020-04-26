@@ -54,7 +54,7 @@
                   
                  
                      inputdata = inputdata +
-                     `<div class="inputcontent"> 
+                     `<div class="inputcontent" data-hor="${i}"> 
                      <div class="inputsidecontent">
                        <div class="inputdata" >
                        <h5>HORIZONTAL-LEFT-SIDE[ROW-`+i+`]:</h5>
@@ -150,7 +150,7 @@ function Rchangeofslot(a)
                   space=space+`
                   <h6>HORIZONTAL-LEFT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`</h6>
                   
-                  <div class="input-group  col-md-10" id="inputleftgroupspacegroup[`+i+`]">
+                  <div class="input-group  col-md-10" id="inputleftgroupspacegroup[`+i+`]" data-leftspace="${i}">
       
                     <input type="number" style="height:2.1rem;font-size:16px;"  class="form-control" name="field" placeholder="slot number to hold [max value:`+HLmaxvalues+`]" id="inputHleftslotspaceitemindex[`+i+`]" min="1" max="`+HLmaxvalues+`" required>
                 
@@ -196,7 +196,7 @@ function Rchangeofslot(a)
                   space=space+`
                   <h6>HORIZONTAL-RIGHT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`</h6>
                   
-                  <div class="input-group col-md-10 spacedata" id="inputrightgroupspacegroup[`+i+`]">
+                  <div class="input-group col-md-10 spacedata" id="inputrightgroupspacegroup[`+i+`]" data-rightspace="${i}">
       
                   <input type="number" style="height:2.1rem;font-size:16px;" class="form-control" name="field" placeholder="slot number to hold [max value:`+HRmaxvalues+`]" id="inputHrightslotspaceitemindex[`+i+`]" min="1" max="`+HRmaxvalues+`" required>
                  
@@ -419,10 +419,12 @@ function display2()
             if(Hlanes>0 && Vlanes<=0)
             {
             display();
+            get();
             }
             else if(Vlanes>0 && Hlanes<=0)
             {
             Vdisplay();
+            get();
             }
             else if(Hlanes==0 && Vlanes==0)
             {
@@ -432,6 +434,7 @@ function display2()
             {
               display();
               Vdisplay();
+              get();
             }
           
          
@@ -479,7 +482,7 @@ function Vinner()
             
            
                inputdata = inputdata +
-               `<div class="inputcontent"> 
+               `<div class="inputcontent" data-ver="${i}"> 
                <div class="inputsidecontent">
                  <div class="inputdata" >
                  <h5>VERTICAL-LEFT-SIDE[ROW-`+i+`]:</h5>
@@ -575,7 +578,7 @@ function verticalleftspaces(id, Vlanes)
             space=space+`
             <h6>VERTICAL-LEFT-SIDE[ROW-`+Vlanes+`]-SPACEITEM:`+i+`</h6>
             
-            <div class="input-group  col-md-10" id="VHinputleftgroupspacegroup[`+i+`]">
+            <div class="input-group  col-md-10" id="VHinputleftgroupspacegroup[`+i+`]" data-leftspace="${i}">
 
               <input type="number" style="height:2.1rem;font-size:16px;" class="form-control" name="field" placeholder="slot number to hold [max value:`+VLmaxvalues+`]" id="inputVleftslotspaceitemindex[`+i+`]" min="1" max="`+VLmaxvalues+`" required>
           
@@ -621,7 +624,7 @@ function verticalrightspaces(id,Vlanes)
             space=space+`
             <h6>VERTICAL-RIGHT-SIDE[ROW-`+Vlanes+`]-SPACEITEM:`+i+`</h6>
             
-            <div class="input-group col-md-10 spacedata" id="VRinputrightgroupspacegroup[`+i+`]">
+            <div class="input-group col-md-10 spacedata" id="VRinputrightgroupspacegroup[`+i+`]" data-rightspace="${i}">
 
             <input type="number" style="height:2.1rem;font-size:16px;" class="form-control" name="field" placeholder="slot number to hold [max value:`+VRmaxvalues+`]" id="inputVrightslotspaceitemindex[`+i+`]" min="1" max="`+VRmaxvalues+`" required>
            
@@ -828,3 +831,117 @@ for(l=1;l<=leftids;l++)
 
 
 }
+
+
+
+
+
+  function get()
+  {
+ 
+
+    var obj ={};
+    obj.hdata=[];
+    obj.vdata=[];
+ 
+    
+    $.each($('[data-hor]'),function(i,it)
+    {
+        
+      let leftslots = $($(it).find('[id^=inputHleftslots]')[0]).val();
+      let rightslots = $($(it).find('[id^=inputHrightslots]')[0]).val();
+ 
+    //  var leftspaces = $($(it).find('[id^=inputHleftspaceitems]')[0]).val();
+    // var rightspaces = $($(it).find('[id^=inputHrightspaceitems]')[0]).val();
+      
+    let hrow = {};
+
+    
+      hrow.leftslots= leftslots;
+      hrow.rightslots= rightslots;
+
+      hrow.leftspaces=[];
+      hrow.rightspaces=[];
+     
+
+      $.each($($(it).find('[data-leftspace]')),function(j,is){
+       
+        let slotnum = $($(is).find('[id^=inputHleftslotspaceitemindex]')[0]).val();
+        let totalspace = $($(is).find('[id^=inputHleftslotspaces]')[0]).val();
+       
+
+        let innerobj ={slotnumber:slotnum,totalspaces:totalspace};
+        hrow.leftspaces.push(innerobj);
+
+      })
+
+      $.each($($(it).find('[data-rightspace]')),function(j,is){
+
+        let slotnum = $($(is).find('[id^=inputHrightslotspaceitemindex]')[0]).val();
+        let totalspace = $($(is).find('[id^=inputHrightslotspaces]')[0]).val();
+        let innerobj ={slotnumber:slotnum,totalspaces:totalspace};
+        hrow.rightspaces.push(innerobj);
+      })
+
+      
+        obj.hdata.push(hrow);
+        
+        
+
+    })
+  
+  
+
+    $.each($('[data-ver]'),function(i,it)
+    {
+      let leftslots = $($(it).find('[id^=inputVleftslots]')[0]).val();
+      let rightslots = $($(it).find('[id^=inputVrightslots]')[0]).val();
+ 
+    //  var leftspaces = $($(it).find('[id^=inputHleftspaceitems]')[0]).val();
+    // var rightspaces = $($(it).find('[id^=inputHrightspaceitems]')[0]).val();
+      
+    let vrow = {};
+
+      vrow.leftslots= leftslots;
+      vrow.rightslots= rightslots;
+
+      vrow.leftspaces=[];
+      vrow.rightspaces=[];
+
+
+      $.each($($(it).find('[data-leftspace]')),function(j,is){
+       
+        let slotnum = $($(is).find('[id^=inputVleftslotspaceitemindex]')[0]).val();
+        let totalspace = $($(is).find('[id^=inputVleftslotspaces]')[0]).val();
+       
+
+        let innerobj ={slotnumber:slotnum,totalspaces:totalspace};
+        vrow.leftspaces.push(innerobj);
+
+      })
+
+      $.each($($(it).find('[data-rightspace]')),function(j,is){
+
+        let slotnum = $($(is).find('[id^=inputVrightslotspaceitemindex]')[0]).val();
+        let totalspace = $($(is).find('[id^=inputVrightslotspaces]')[0]).val();
+        let innerobj ={slotnumber:slotnum,totalspaces:totalspace};
+        vrow.rightspaces.push(innerobj);
+      })
+
+
+      
+    
+         obj.vdata.push(vrow);
+
+    })
+
+
+
+
+
+
+
+    console.log(obj);
+
+    console.log(JSON.stringify(obj));
+  }
