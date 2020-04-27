@@ -59,7 +59,7 @@
                        <div class="inputdata" >
                        <h5>HORIZONTAL-LEFT-SIDE[ROW-`+i+`]:</h5>
                         
-                         <div class="input-group input-group-sm" id="inputleftgroup[`+i+`]">
+                         <div class="input-group input-group-md" id="inputleftgroup[`+i+`]">
                       
                      <input type="number" style=" font-size:16px" class="form-control" name="field" placeholder="No.of slots [max value:1000]" id="inputHleftslots[`+i+`]" min="0" max="1000" oninput="Lchangeofslot(`+i+`)" required >
                    
@@ -80,7 +80,7 @@
                     <div class="inputdata" id=inputrightdata[`+i+`]>
                     <h5>HORIZONTAL-RIGHT-SIDE[ROW-`+i+`]:</h5>
                     
-                    <div class="input-group input-group-sm " id="inputrightgroup[`+i+`]">
+                    <div class="input-group input-group-md " id="inputrightgroup[`+i+`]">
                      
                         <input type="number" style=" font-size:16px" class="form-control" name="field" placeholder="No.of slots [max value:1000]" id="inputHrightslots[`+i+`]" min="0" max="1000" oninput="Rchangeofslot(`+i+`)" required >
                        
@@ -487,7 +487,7 @@ function Vinner()
                  <div class="inputdata" >
                  <h5>VERTICAL-LEFT-SIDE[ROW-`+i+`]:</h5>
                   
-                   <div class="input-group input-group-sm  " id="inputleftgroup[`+i+`]">
+                   <div class="input-group input-group-md  " id="inputleftgroup[`+i+`]">
                 
                <input type="number" style=" font-size:16px" class="form-control" name="field" placeholder="No.of slots [max value:1000]" id="inputVleftslots[`+i+`]" min="0" max="1000" oninput="VLchangeofslot(`+i+`)" required >
              
@@ -508,7 +508,7 @@ function Vinner()
               <div class="inputdata" id=inputrightdata[`+i+`]>
               <h5>VERTICAL-RIGHT-SIDE[ROW-`+i+`]:</h5>
               
-              <div class="input-group input-group-sm " id="inputrightgroup[`+i+`]">
+              <div class="input-group input-group-md " id="inputrightgroup[`+i+`]">
                
                   <input type="number" style=" font-size:16px" class="form-control" name="field" placeholder="No.of slots [max value:1000]" id="inputVrightslots[`+i+`]" min="0" max="1000" oninput="VRchangeofslot(`+i+`)" required >
                  

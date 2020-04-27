@@ -291,10 +291,12 @@
 
 .body-content
 {
-  border:3px solid #259c56;
+  border:5px solid darkgrey;
  
   font-size:10px;
-  padding:15px;
+  padding:10px;
+  background: #5D6666;
+    color: whitesmoke;
 }
 
     
@@ -307,14 +309,14 @@
 }
 .inputsidecontent
 {
-  border:2px solid #259c56;
+  border:2px solid darkgrey;
         font-size:10px;
-        padding:10px;
-        margin-top:9px;
+      
+        margin-top:6px;
 }
       .inputdata
       {
-        border:1px solid #259c56;
+        border:1px solid darkgrey;
         font-size:10px;
         padding:10px;
       
@@ -354,8 +356,19 @@
         font-size: 15.5px;
         font-weight: bold;
       }
+      h2,h3,h4,h5,h6{
+        color:#E8F8F5;
+      }
 
+      .container-fluid
+      {
+        background:#EBEDEF;;
+      }
 
+.form-control
+{
+  background-color:#F2F8F8;
+}
 
 
       @media only screen and (max-width: 600px) {
