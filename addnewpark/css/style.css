@@ -277,7 +277,7 @@
 
         .btn
        {
-        background:#227545;
+        background:#767E7F;
         color:wheat;
        }
 
@@ -318,9 +318,13 @@
       {
         border:1px solid darkgrey;
         font-size:10px;
-        padding:10px;
+        padding:5px;
       
       
+      }
+      .spacedatadiv
+      {
+        margin-top: 5px;
       }
 
       .hspace

@@ -57,7 +57,7 @@
                      `<div class="inputcontent" data-hor="${i}"> 
                      <div class="inputsidecontent">
                        <div class="inputdata" >
-                       <h5>HORIZONTAL-LEFT-SIDE[ROW-`+i+`]:</h5>
+                       <h5>LEFT-SIDE[ROW-`+i+`]:</h5>
                         
                          <div class="input-group input-group-md" id="inputleftgroup[`+i+`]">
                       
@@ -68,7 +68,7 @@
                     
                 
                     </div>
-                    <div class="input-group input-group-sm justify-content-md-center" id="inputHleftspaceitemdata[`+i+`]">
+                    <div class="input-group input-group-sm justify-content-md-center" id="inputHleftspaceitemdata[`+i+`]" style="margin-top:5px">
                    
                     </div>
                   
@@ -78,7 +78,7 @@
                     `
                 
                     <div class="inputdata" id=inputrightdata[`+i+`]>
-                    <h5>HORIZONTAL-RIGHT-SIDE[ROW-`+i+`]:</h5>
+                    <h5>RIGHT-SIDE[ROW-`+i+`]:</h5>
                     
                     <div class="input-group input-group-md " id="inputrightgroup[`+i+`]">
                      
@@ -87,7 +87,7 @@
                         <input type="number" style=" font-size:16px" class="form-control" name="field" placeholder="No.of space items [max value:100]" id="inputHrightspaceitems[`+i+`]"  min="0" max="100" oninput="horizontalrightspaces(value,`+i+`)" required>
                       
                       </div>
-                      <div class="input-group input-group-sm justify-content-md-center" id="inputHrightspaceitemdata[`+i+`]">
+                      <div class="input-group input-group-sm justify-content-md-center" id="inputHrightspaceitemdata[`+i+`]"  style="margin-top:5px">
                    
                       </div>
                     </div></div>`
@@ -148,7 +148,8 @@ function Rchangeofslot(a)
                 
               
                   space=space+`
-                  <h6>HORIZONTAL-LEFT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`</h6>
+                  
+                  <h6>LEFT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`</h6>
                   
                   <div class="input-group  col-md-10" id="inputleftgroupspacegroup[`+i+`]" data-leftspace="${i}">
       
@@ -194,7 +195,7 @@ function Rchangeofslot(a)
               for(i=1;i<=id;i++)
               {
                   space=space+`
-                  <h6>HORIZONTAL-RIGHT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`</h6>
+                  <h6>RIGHT-SIDE[ROW-`+Hlanes+`]-SPACEITEM:`+i+`</h6>
                   
                   <div class="input-group col-md-10 spacedata" id="inputrightgroupspacegroup[`+i+`]" data-rightspace="${i}">
       
@@ -485,7 +486,7 @@ function Vinner()
                `<div class="inputcontent" data-ver="${i}"> 
                <div class="inputsidecontent">
                  <div class="inputdata" >
-                 <h5>VERTICAL-LEFT-SIDE[ROW-`+i+`]:</h5>
+                 <h5>LEFT-SIDE[ROW-`+i+`]:</h5>
                   
                    <div class="input-group input-group-md  " id="inputleftgroup[`+i+`]">
                 
@@ -496,7 +497,7 @@ function Vinner()
               
           
               </div>
-              <div class="input-group input-group-sm justify-content-md-center" id="inputVleftspaceitemdata[`+i+`]">
+              <div class="input-group input-group-sm justify-content-md-center" id="inputVleftspaceitemdata[`+i+`]"  style="margin-top:5px">
              
               </div>
             
@@ -506,7 +507,7 @@ function Vinner()
               `
           
               <div class="inputdata" id=inputrightdata[`+i+`]>
-              <h5>VERTICAL-RIGHT-SIDE[ROW-`+i+`]:</h5>
+              <h5>RIGHT-SIDE[ROW-`+i+`]:</h5>
               
               <div class="input-group input-group-md " id="inputrightgroup[`+i+`]">
                
@@ -515,7 +516,7 @@ function Vinner()
                   <input type="number" style=" font-size:16px" class="form-control" name="field" placeholder="No.of space items [max value:100]" id="inputVrightspaceitems[`+i+`]"  min="0" max="100" oninput="verticalrightspaces(value,`+i+`)" required>
                 
                 </div>
-                <div class="input-group input-group-sm justify-content-md-center" id="inputVrightspaceitemdata[`+i+`]">
+                <div class="input-group input-group-sm justify-content-md-center" id="inputVrightspaceitemdata[`+i+`]"  style="margin-top:5px">
              
                 </div>
               </div></div>`
@@ -576,7 +577,7 @@ function verticalleftspaces(id, Vlanes)
           
         
             space=space+`
-            <h6>VERTICAL-LEFT-SIDE[ROW-`+Vlanes+`]-SPACEITEM:`+i+`</h6>
+            <h6>LEFT-SIDE[ROW-`+Vlanes+`]-SPACEITEM:`+i+`</h6>
             
             <div class="input-group  col-md-10" id="VHinputleftgroupspacegroup[`+i+`]" data-leftspace="${i}">
 
@@ -622,7 +623,7 @@ function verticalrightspaces(id,Vlanes)
         for(i=1;i<=id;i++)
         {
             space=space+`
-            <h6>VERTICAL-RIGHT-SIDE[ROW-`+Vlanes+`]-SPACEITEM:`+i+`</h6>
+            <h6>RIGHT-SIDE[ROW-`+Vlanes+`]-SPACEITEM:`+i+`</h6>
             
             <div class="input-group col-md-10 spacedata" id="VRinputrightgroupspacegroup[`+i+`]" data-rightspace="${i}">
 

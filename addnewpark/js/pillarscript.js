@@ -66,7 +66,7 @@
                        
                    
                        </div>
-                       <div class="input-group input-group-sm justify-content-md-center" id="inputHleftspaceitemdata[`+i+`]">
+                       <div class="input-group input-group-sm justify-content-md-center" id="inputHleftspaceitemdata[`+i+`]" style="margin-top:5px">
                       
                        </div>
                      
@@ -85,7 +85,7 @@
                            <input type="number" style="font-size:16px" class="form-control" name="field" placeholder="No.of pillars [max value:100]" id="inputHrightpillar[`+i+`]"  min="0" max="100" oninput="horizontalrightspaces(value,`+i+`)" required>
                          
                          </div>
-                         <div class="input-group input-group-sm  justify-content-md-center" id="inputHrightspaceitemdata[`+i+`]">
+                         <div class="input-group input-group-sm  justify-content-md-center" id="inputHrightspaceitemdata[`+i+`]" style="margin-top:5px">
                       
                          </div>
                        </div></div>`
