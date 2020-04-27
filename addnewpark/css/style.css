@@ -22,8 +22,9 @@
        
        }
        .horizontal-parking > .hscrollable > .row-data { 
-        overflow-x: scroll; 
-        white-space: nowrap; 
+        overflow: scroll; 
+        white-space: nowrap;
+        height: 250px; 
        
     } 
       
@@ -152,15 +153,15 @@
         
          
          border: 40px solid rgba(0,0,0, 0.4);
-         border-top: 20px solid rgba(0,0,0, 0.4);
+         border-top: 8px solid rgba(0,0,0, 0.4);
          padding: 0px;
       
-        height:380px;
+        height:340px;
        }
        .vertical-parking > .hscrollable > .row-data { 
         overflow-x: scroll; 
         white-space: nowrap; 
-        height: 320px;
+        height: 280px;
     } 
       
     .vertical-parking > .hscrollable > .row-data > .column-set { 
