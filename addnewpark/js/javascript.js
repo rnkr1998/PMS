@@ -844,11 +844,11 @@ for(l=1;l<=leftids;l++)
     var obj ={};
     obj.hdata=[];
     obj.vdata=[];
- 
+    var hcount=0;
     
     $.each($('[data-hor]'),function(i,it)
     {
-        
+        hcount=hcount+1;
       let leftslots = $($(it).find('[id^=inputHleftslots]')[0]).val();
       let rightslots = $($(it).find('[id^=inputHrightslots]')[0]).val();
  
@@ -890,11 +890,14 @@ for(l=1;l<=leftids;l++)
         
 
     })
+    
+    
   
   
-
+    var Vcount=0;
     $.each($('[data-ver]'),function(i,it)
     {
+      Vcount=Vcount+1;
       let leftslots = $($(it).find('[id^=inputVleftslots]')[0]).val();
       let rightslots = $($(it).find('[id^=inputVrightslots]')[0]).val();
  
@@ -938,9 +941,10 @@ for(l=1;l<=leftids;l++)
 
 
 
+    
 
-
-
+obj.Hlanes=hcount;
+obj.Vlanes=Vcount;
 
     console.log(obj);
 
