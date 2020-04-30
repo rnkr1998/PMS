@@ -787,7 +787,7 @@ for(l=1;l<=leftids;l++)
           
           spaces=spaces+`
           <div class="space-container" ><div class="car"></div> <span class="vspace" ></span></div>
-
+        
 
           `
         
